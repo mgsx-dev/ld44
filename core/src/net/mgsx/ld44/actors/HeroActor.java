@@ -3,6 +3,7 @@ package net.mgsx.ld44.actors;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Align;
@@ -20,8 +21,10 @@ public class HeroActor extends Group
 	private float bodyRotation;
 	private Image head;
 	
-	private float jump;
+	public float jump;
 	public float jumpHeight, jumpVel, jumpAcc;
+	
+	private Actor tail;
 
 	public HeroActor() {
 		TextureRegion heroBody = new TextureRegion(GameAssets.i.hero, 0, 0, 64, 64);
@@ -72,4 +75,13 @@ public class HeroActor extends Group
 		body.setRotation(bodyRotation);
 		super.act(delta);
 	}
+
+	public void addCoin(CoinActor coin) {
+		if(tail == null){
+			tail = this;
+		}
+		coin.head = tail;
+		tail = coin;
+	}
+
 }

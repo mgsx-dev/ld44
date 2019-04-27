@@ -5,9 +5,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
 
+import net.mgsx.ld44.actors.CoinActor;
 import net.mgsx.ld44.actors.CurveActor;
 import net.mgsx.ld44.actors.HeroActor;
 import net.mgsx.ld44.model.CurrencyCurve;
@@ -19,12 +22,16 @@ public class CurvesScene extends Group implements Scene{
 
 	private CurrencyGame game;
 	private ShapeRenderer shapeRenderer;
-	public final Vector2 worldCenter = new Vector2();
+	public final Vector2 worldCenter = new Vector2(0,0);
 	private float stepSize = 60 * 2;
 	private HeroActor hero;
 	private static final Vector2 point = new Vector2();
 	private float t;
+	
+	private Array<Actor> entities = new Array<Actor>();
 
+	// TODO plae and check bonus and other entities ...
+	
 	public CurvesScene() {
 		
 		shapeRenderer = new ShapeRenderer();
@@ -38,12 +45,12 @@ public class CurvesScene extends Group implements Scene{
 		for(int i=0 ; i<3 ; i++){
 			CurrencyCurve c = new CurrencyCurve().set(i, colors[i%colors.length]);
 			for(int j=0 ; j<c.controlPoints.length ; j++){
-				c.add(point.set(i * stepSize, c.index * 200 + MathUtils.random(10)));
+				c.add(point.set(i * stepSize, 100));
 			}
 			game.curves.add(c);
 			addActor(new CurveActor(shapeRenderer, c));
 		}
-		worldCenter.x = CurrencyCurve.BUFFER_SIZE * stepSize;
+		// worldCenter.x = CurrencyCurve.BUFFER_SIZE * stepSize + 500;
 		
 		hero = new HeroActor();
 		hero.curve = game.curves.first();
@@ -80,6 +87,13 @@ public class CurvesScene extends Group implements Scene{
 								(MathUtils.random() - .6f) * 1300 +
 								c.index * 100
 						)));
+				
+				// test add bonus
+				CoinActor coinActor = new CoinActor();
+				addActor(coinActor);
+				coinActor.setPosition(point.x, point.y + 6 * 32f);
+				
+				entities.add(coinActor);
 			}
 			t -= 1;
 		}
@@ -111,7 +125,10 @@ public class CurvesScene extends Group implements Scene{
 				if(true){
 					if(point.y < hero.baseY + hero.jumpHeight && point.y > curY){
 						hero.curve = c2;
+						hero.jumpHeight += -point.y + hero.baseY;
+						hero.baseY = point.y;
 						curY = point.y;
+						
 					}
 				}
 			}
@@ -122,8 +139,35 @@ public class CurvesScene extends Group implements Scene{
 			hero.setY(hero.baseY = point.y);
 		}
 		
+//		if(hero.baseY + hero.jumpHeight < curY){
+//			hero.jump = 0;
+//			hero.jumpVel = 0;
+//			hero.jumpHeight = 0;
+//		}
+		
 		cam.position.x = hero.getX(Align.center) + GameScreen.WORLD_WIDTH/4;
 		cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
+		
+		for(Actor e : entities){
+			if(e.getParent() == null){
+				
+			}
+			
+			float hx = hero.getX();
+			float hy = hero.getY();
+			float ex = e.getX();
+			float ey = e.getY();
+			if(point.set(ex - hx, ey - hy).len() < 64f - 20){ // tODO radius
+				if(e instanceof CoinActor){
+					CoinActor coin = (CoinActor) e;
+					if(coin.head == null){
+						hero.addCoin(coin);
+					}
+					// e.remove();
+				}
+			}
+		}
+		for(int i=0 ; i<entities.size ; ) if(entities.get(i).getParent() == null) entities.removeIndex(i); else i++;
 		
 		super.act(delta);
 	}
