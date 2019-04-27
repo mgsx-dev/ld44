@@ -28,7 +28,7 @@ public class MenuScene extends Table
 	
 	public void play() {
 		addAction(Actions.sequence(
-				Actions.moveBy(getWidth(), 0, 1f, Interpolation.sine),
+				Actions.moveBy(getWidth(), 0, .5f, Interpolation.pow2),
 				Actions.run(new Runnable() {
 					@Override
 					public void run() {

@@ -1,9 +1,14 @@
 package net.mgsx.ld44.screens;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.Scaling;
 
 import net.mgsx.ld44.assets.GameAssets;
+import net.mgsx.ld44.gfx.BlurNode;
+import net.mgsx.ld44.gfx.PostProcessingStack;
+import net.mgsx.ld44.gfx.ThresholdNode;
 import net.mgsx.ld44.scenes.MenuScene;
 import net.mgsx.ld44.utils.PixelPerfectViewport;
 import net.mgsx.ld44.utils.Scene;
@@ -17,8 +22,20 @@ public class GameScreen extends UIScreen
 
 	private Scene currentScene;
 	
+	PostProcessingStack postProcessing;
+	
 	public GameScreen() {
 		super(new PixelPerfectViewport(WORLD_WIDTH, WORLD_HEIGHT), GameAssets.i.skin);
+		
+		postProcessing = new PostProcessingStack();
+		postProcessing.pipeline.add(new ThresholdNode().set(10f));
+		postProcessing.pipeline.add(new BlurNode());
+		
+		Image img;
+		stage.addActor(img = new Image(GameAssets.i.skin, "white"));
+		img.setScaling(Scaling.stretch);
+		img.setFillParent(true);
+		img.setColor(.2f, .15f, .15f, 1);
 		
 		directTransition(new MenuScene());
 		
@@ -30,6 +47,14 @@ public class GameScreen extends UIScreen
 				}
 			}
 		});
+	}
+	
+	@Override
+	public void render(float delta) {
+		postProcessing.begin();
+		stage.getViewport().apply();
+		super.render(delta);
+		postProcessing.end();
 	}
 
 	protected void directTransition(Actor nextActor) {

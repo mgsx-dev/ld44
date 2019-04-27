@@ -1,0 +1,12 @@
+buildscript {
+	repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    
+    apply from: "${sourceFile.parent}/common.gradle"
+}
+
+apply plugin: 'base'
+
+// TODO
