@@ -1,3 +1,4 @@
 *.fnt
 *.atlas
 /assets/skins/*.png
+/assets/hero.png

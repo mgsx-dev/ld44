@@ -42,6 +42,12 @@ fileTree(skinSrcDir) {
 	skinUnpackedTasks << inkscapeExport("$skinSrcDir/$inFile.name", "$skinUnpackedDir/")
 }
 
+fileTree("src/sprites") {
+    include '*.svg'
+}.each {File inFile ->
+	skinUnpackedTasks << inkscapeExport("src/sprites/$inFile.name", "../android/assets/")
+}
+
 
 /* PNG */
 
