@@ -1,5 +1,7 @@
 package net.mgsx.ld44.scenes;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -30,6 +32,9 @@ public class CurvesScene extends Group implements Scene{
 	
 	private Array<Actor> entities = new Array<Actor>();
 
+	private final static Array<CoinActor> nextCoins = new Array<CoinActor>();
+	private final static Array<CoinActor> toRemoveCoins = new Array<CoinActor>();
+	
 	// TODO plae and check bonus and other entities ...
 	
 	public CurvesScene() {
@@ -40,7 +45,7 @@ public class CurvesScene extends Group implements Scene{
 		
 		game = new CurrencyGame();
 		
-		Color[] colors = new Color[]{Color.RED, Color.ORANGE, Color.YELLOW};
+		Color[] colors = new Color[]{Color.RED, Color.ORANGE, Color.GREEN};
 		
 		for(int i=0 ; i<3 ; i++){
 			CurrencyCurve c = new CurrencyCurve().set(i, colors[i%colors.length]);
@@ -89,7 +94,7 @@ public class CurvesScene extends Group implements Scene{
 						)));
 				
 				// test add bonus
-				CoinActor coinActor = new CoinActor();
+				CoinActor coinActor = new CoinActor(MathUtils.random(2));
 				addActor(coinActor);
 				coinActor.setPosition(point.x, point.y + 6 * 32f);
 				
@@ -148,6 +153,21 @@ public class CurvesScene extends Group implements Scene{
 		cam.position.x = hero.getX(Align.center) + GameScreen.WORLD_WIDTH/4;
 		cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
 		
+		while(hero.coins.size > 10){
+			hero.coins.pop().remove(); // TODO anim
+			updateHeroTail(this, hero);
+		}
+		if(Gdx.input.isKeyJustPressed(Input.Keys.Z)){
+			hero.coins.removeIndex(0).remove();
+			updateHeroTail(this, hero);
+		}
+		if(Gdx.input.isKeyJustPressed(Input.Keys.E)){
+			if(hero.coins.size > 0){
+				hero.coins.add(hero.coins.removeIndex(0));
+				updateHeroTail(this, hero);
+			}
+		}
+		
 		for(Actor e : entities){
 			if(e.getParent() == null){
 				
@@ -162,6 +182,7 @@ public class CurvesScene extends Group implements Scene{
 					CoinActor coin = (CoinActor) e;
 					if(coin.head == null){
 						hero.addCoin(coin);
+						updateHeroTail(this, hero);
 					}
 					// e.remove();
 				}
@@ -170,6 +191,70 @@ public class CurvesScene extends Group implements Scene{
 		for(int i=0 ; i<entities.size ; ) if(entities.get(i).getParent() == null) entities.removeIndex(i); else i++;
 		
 		super.act(delta);
+	}
+
+	public static void updateHeroTail(Group container, HeroActor hero)
+	{
+		boolean enabled = true;
+		if(!enabled) return;
+		
+		
+		
+		
+		
+		toRemoveCoins.clear();
+		nextCoins.clear();
+		int ctype = -1;
+		int count = 0;
+		int groupSizeForType = -1;
+		for(int i=hero.coins.size-1 ; i>=0 ; i--){
+			CoinActor coin = hero.coins.get(i);
+			if(count == 0){
+				ctype = coin.type;
+				count = 1;
+				// XXX true => groupSizeForType = ctype % 3 == 2 ? 2 : 5;
+				groupSizeForType = ctype % 3 == 2 ? 2 : 2;
+				toRemoveCoins.add(coin);
+			}else{
+				if(coin.type == ctype){
+					count++;
+					if(count >= groupSizeForType){
+						
+						CoinActor newCoin = new CoinActor(ctype + 2);
+						newCoin.setPosition(toRemoveCoins.first().getX(), toRemoveCoins.first().getY());
+						container.addActor(newCoin);
+						nextCoins.add(newCoin);
+						while(toRemoveCoins.size > 0){
+							toRemoveCoins.pop().remove();
+						}
+						count = 0;
+						i++;
+					}
+				}else{
+					while(toRemoveCoins.size > 0){
+						nextCoins.add(toRemoveCoins.pop());
+					}
+					count = 0;
+					i++;
+				}
+			}
+		}
+		nextCoins.addAll(toRemoveCoins);
+		toRemoveCoins.clear();
+		hero.coins.clear();
+		
+		nextCoins.reverse();
+		if(nextCoins.size > 0) nextCoins.get(0).head = hero;
+		for(int i=1 ; i<nextCoins.size ; i++){
+			nextCoins.get(i).head = nextCoins.get(i-1);
+			
+		}
+		
+		hero.coins.addAll(nextCoins);
+		nextCoins.clear();
+		
+		hero.tail = hero.coins.peek();
+		
 	}
 
 	@Override

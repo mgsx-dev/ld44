@@ -16,9 +16,12 @@ public class CoinActor extends Group
 	private Image body;
 	private float time;
 	public Actor head;
+	
+	public int type;
 
-	public CoinActor() {
-		TextureRegion tBody = new TextureRegion(GameAssets.i.hero, 0, 64 * MathUtils.random(2), 64, 64);
+	public CoinActor(int type) {
+		this.type = type;
+		TextureRegion tBody = new TextureRegion(GameAssets.i.hero, 0, type * 64, 64, 64);
 		body = new Image(tBody);
 		addActor(body);
 		body.setOrigin(Align.center);
@@ -29,8 +32,8 @@ public class CoinActor extends Group
 	public void act(float delta) {
 		
 		if(head != null){
-			QuickGdx.follow(this, head, .2f, 32f); // radius + half radius
-			body.setScale(.5f);
+			QuickGdx.follow(this, head, 10f * delta, 5f); // radius + half radius
+			body.setScale(1f);
 		}else{
 			time += delta * 360f;
 			body.setScaleX(MathUtils.sinDeg(time));

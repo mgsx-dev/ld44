@@ -24,7 +24,7 @@ public class GameScreen extends UIScreen
 		super(new PixelPerfectViewport(WORLD_WIDTH, WORLD_HEIGHT), GameAssets.i.skin);
 		
 		postProcessing = new PostProcessingStack();
-		postProcessing.pipeline.add(new ThresholdNode().set(10f));
+		postProcessing.pipeline.add(new ThresholdNode().set(.5f));
 		postProcessing.pipeline.add(new BlurNode());
 		
 //		Image img;

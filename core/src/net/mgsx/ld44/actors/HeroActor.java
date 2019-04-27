@@ -2,11 +2,13 @@ package net.mgsx.ld44.actors;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
 
 import net.mgsx.ld44.assets.GameAssets;
 import net.mgsx.ld44.model.CurrencyCurve;
@@ -24,15 +26,16 @@ public class HeroActor extends Group
 	public float jump;
 	public float jumpHeight, jumpVel, jumpAcc;
 	
-	private Actor tail;
+	public Actor tail;
+	
+	public final Array<CoinActor> coins = new Array<CoinActor>();
 
 	public HeroActor() {
-		TextureRegion heroBody = new TextureRegion(GameAssets.i.hero, 0, 0, 64, 64);
-		body = new Image(heroBody);
+		body = new Image(GameAssets.i.heroBodyRegion);
 		addActor(body);
 		body.setOrigin(Align.center);
 		
-		TextureRegion heroHead = new TextureRegion(GameAssets.i.hero, 64, 0, 64, 64);
+		TextureRegion heroHead = new TextureRegion(GameAssets.i.hero, 64 * 8, 0, 64, 64);
 		head = new Image(heroHead);
 		addActor(head);
 		head.setOrigin(Align.center);
@@ -42,23 +45,25 @@ public class HeroActor extends Group
 	@Override
 	public void act(float delta) {
 		
+		((OrthographicCamera)getStage().getCamera()).zoom = 2f;
+		
 		if(jump <= 0 && Gdx.input.isKeyJustPressed(Input.Keys.A)){
 			jump = 1;
 			jumpVel = 12;
 		}
 		if(jump > 0 && !Gdx.input.isKeyPressed(Input.Keys.A)){
-			jumpVel -= delta * 40;
+			jumpVel -= delta * 70;
 			if(jumpVel <0){
 				// jumpVel /= 1.1f;
 			}
 		}else if(jump > 0){
 			if(jumpVel < 0){
-				jumpVel -= delta * 5;
+				jumpVel -= delta * 10;
 			}else{
 				jumpVel -= delta * 20;
 			}
 		}
-		jumpVel = Math.max(jumpVel, -5);
+		jumpVel = Math.max(jumpVel, -50);
 		jumpHeight += jumpVel;
 		if(jumpHeight < 0){
 			jump = 0;
@@ -82,6 +87,7 @@ public class HeroActor extends Group
 		}
 		coin.head = tail;
 		tail = coin;
+		coins.insert(0, coin);
 	}
 
 }
