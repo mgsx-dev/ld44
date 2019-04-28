@@ -9,14 +9,14 @@ public class GameRules {
 	}
 	
 	public static int coinTransformType(int coinType){
-		return coinType%3 == 2 ? coinType+1 : coinType+2;
+		return (coinType%3 == 2 ? coinType+1 : coinType+2) % 9;
 	}
 
 	public static int randomCoinTypeFor(int type) {
-		int minType = Math.min(type-1, 0);
+		int minType = Math.max(type-1, 0);
 		int maxType = type+1;
 //		maxType = type; // XXX
-		minType = type; // XXX
-		return MathUtils.random(minType, maxType);
+//		minType = type; // XXX
+		return MathUtils.random(minType, maxType) % 9;
 	}
 }

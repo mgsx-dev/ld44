@@ -307,7 +307,7 @@ public class CurvesScene extends Group implements Scene{
 		
 		
 		
-		// TODO handle head (hero) transform
+		// TODO why other transform leave hero head ????? maybe tail : hero tail ??? :grim:
 		
 		toRemoveCoins.clear();
 		nextCoins.clear();
@@ -340,14 +340,14 @@ public class CurvesScene extends Group implements Scene{
 						
 						lockBar = LOCK_FOR_FUSION;
 						
-						//nextCoins.add(newCoin);
+						// nextCoins.add(newCoin);
 						while(toRemoveCoins.size > 0){
 							toRemoveCoins.pop().remove();
 						}
 						count = 1;
 						ctype = newCoin.type;
 						toRemoveCoins.add(newCoin);
-						i++;
+						//i++;
 					}
 				}else{
 					while(toRemoveCoins.size > 0){
@@ -385,7 +385,7 @@ public class CurvesScene extends Group implements Scene{
 		hero.coins.addAll(nextCoins);
 		nextCoins.clear();
 		
-		hero.tail = hero.coins.size > 0 ? hero.coins.peek() : hero;
+		hero.tail = hero.coins.size > 0 ? hero.coins.first() : hero;
 		
 	}
 
