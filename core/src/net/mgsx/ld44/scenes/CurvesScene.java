@@ -80,7 +80,7 @@ public class CurvesScene extends Group implements Scene{
 		hero.curve = game.curves.first();
 		addActor(hero);
 		
-		GameAudio.i.playMusicGame1();
+		GameAudio.i.playMusicGame2();
 	}
 	
 	// TODO when gen points : f (time) + last points position
@@ -144,8 +144,12 @@ public class CurvesScene extends Group implements Scene{
 		// TODO split in different method r class
 		if(lockBar <= 0){
 			
+			if(GameAudio.i.lastEvents.size > 0){
+				spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)));
+			}
+			
 			if(GameAudio.i.isJustBar(1, 0)){
-				spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(0f)));
+				// XXX spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(0f)));
 			}
 			
 			for(CurrencyCurve c : game.curves){
@@ -276,8 +280,8 @@ public class CurvesScene extends Group implements Scene{
 		addActor(coinActor);
 		
 		coinActor.addAction(Actions.sequence(syncAction(1f), Actions.parallel(
-				Actions.scaleTo(1, 1, .5f, Interpolation.pow3InInverse),
-				Actions.alpha(1, .2f, Interpolation.linear))));
+				Actions.scaleTo(1, 1, .2f, Interpolation.pow3InInverse),
+				Actions.alpha(1, .05f, Interpolation.linear))));
 		
 		coinActor.setPosition(point.x, point.y + 1 * 32f);
 		

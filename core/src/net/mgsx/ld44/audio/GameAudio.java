@@ -1,11 +1,16 @@
 package net.mgsx.ld44.audio;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
 
 import net.mgsx.ld44.assets.GameAssets;
+import net.mgsx.ld44.midi.MidiEvent;
+import net.mgsx.ld44.midi.MidiSequence;
+import net.mgsx.ld44.midi.MidiTrack;
 
 /**
  * Game specific audio logic  
@@ -21,6 +26,8 @@ public class GameAudio {
 	private float currentPosition;
 	private float bpm;
 	
+	public final Array<MidiEvent> lastEvents = new Array<MidiEvent>();
+	
 	private static final class SfxPlay{
 		public Sound sound;
 		public float barPrecision;
@@ -33,6 +40,8 @@ public class GameAudio {
 	}
 	private Array<SfxPlay> scheduledSfx = new Array<SfxPlay>();
 
+	private MidiSequence midiSequence;
+
 	public GameAudio() {
 	}
 	
@@ -40,6 +49,7 @@ public class GameAudio {
 		
 		// XXX
 		sounds.soundMasterVolume = .5f;
+		
 		
 		musics.update(deltaTime);
 		sounds.update(deltaTime);
@@ -55,6 +65,26 @@ public class GameAudio {
 				scheduledSfx.removeIndex(i);
 			}else{
 				i++;
+			}
+		}
+		//System.out.println((currentPosition * (bpm/60)));
+		
+		// update midiSequence events
+		lastEvents.clear();
+		if(midiSequence != null){
+			for(MidiTrack track : midiSequence.tracks){
+				for(MidiEvent e : track.events){
+					if(e.status == 144){ // note on
+						float rate = 1f / (midiSequence.scale * 1);
+						// beats * 4
+						if(e.time*rate < currentPosition * (bpm/60f) && e.time * rate >= lastPosition * (bpm/60f)){
+//							System.out.println(e.time);
+//							System.out.println(currentPosition);
+							lastEvents.add(e);
+							// GameAudio.i.playGrabCoin(0);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -74,9 +104,9 @@ public class GameAudio {
 	}
 
 	public void playGrabCoin(int type) {
-		
-		//sounds.play(GameAssets.i.sfxCoin1);
-		sounds.play(GameAssets.i.sfxSplashs.random());
+		// TODO type
+		sounds.play(GameAssets.i.sfxCoin1);
+		// sounds.play(GameAssets.i.sfxSplashs.random());
 	}
 	public void playGrabCoinSync(int type, float barPrecision) {
 		scheduledSfx.add(new SfxPlay(GameAssets.i.sfxSplashs.random(), barPrecision));
@@ -92,11 +122,13 @@ public class GameAudio {
 	
 	public void playMusicGame1() {
 		bpm = 180;
-		playMusicGame(GameAssets.i.music1);
+		playMusicGame(GameAssets.i.musicB0);
+		midiSequence = null;
 	}
 	public void playMusicGame2() {
 		bpm = 148;
-		playMusicGame(GameAssets.i.music2);
+		playMusicGame(GameAssets.i.musicD1);
+		midiSequence = new Json().fromJson(MidiSequence.class, Gdx.files.internal("music/midi lead track D.1.json"));
 	}
 
 	public float getBarDuration(float barLength) {

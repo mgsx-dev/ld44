@@ -29,8 +29,9 @@ public class GameAssets {
 	public Sound sfxSplash2;
 	public Sound sfxSplash3;
 	
-	public Music music1;
-	public Music music2;
+	public Music musicB0;
+	public Music musicD0;
+	public Music musicD1;
 
 	public Array<Sound> sfxSplashs = new Array<Sound>();
 
@@ -66,8 +67,9 @@ public class GameAssets {
 		sfxSplashs.add(sfxSplash2);
 		sfxSplashs.add(sfxSplash3);
 		
-		music1 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track B.0.mp3"));
-		music2 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.0.mp3"));
+		musicB0 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track B.0.mp3"));
+		musicD0 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.0.mp3"));
+		musicD1 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.1.mp3"));
 		
 		grid1 = new Texture("grid1.png");
 		grid1.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
