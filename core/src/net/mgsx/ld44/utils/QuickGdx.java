@@ -18,6 +18,7 @@ public class QuickGdx {
 	private static final Vector2 va = new Vector2();
 	private static final Vector2 vb = new Vector2();
 	private static final Vector2 vc = new Vector2();
+	private static final Vector2 vd = new Vector2();
 	
 	public static Animation<TextureRegion> textureRegionAnimation(Skin skin, String basename){
 		return textureRegionAnimation(skin.getAtlas(), basename);
@@ -43,10 +44,11 @@ public class QuickGdx {
 		vb.set(b.getX(), b.getY());
 		// ab vector
 		vc.set(vb).sub(va);
-		if(vc.len() < min){
-			vc.setLength(min);
-		}
-		va.mulAdd(vc, speed);
+		
+		// target
+		vd.set(vc).nor().scl(-min).add(vb);
+		
+		va.lerp(vd, speed);
 		a.setPosition(va.x, va.y);
 	}
 

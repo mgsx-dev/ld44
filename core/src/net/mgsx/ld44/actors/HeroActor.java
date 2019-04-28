@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
@@ -29,8 +30,11 @@ public class HeroActor extends Group
 	
 	public final Array<CoinActor> coins = new Array<CoinActor>();
 
-	public HeroActor() {
-		body = new Image(GameAssets.i.heroBodyRegion);
+	public int type;
+
+	public HeroActor(int type) {
+		this.type = type;
+		body = new Image(new TextureRegion(GameAssets.i.hero, 0, type * 64, 64, 64));
 		addActor(body);
 		body.setOrigin(Align.center);
 		
@@ -39,6 +43,12 @@ public class HeroActor extends Group
 		addActor(head);
 		head.setOrigin(Align.center);
 
+	}
+	
+	public void setType(int type) {
+		this.type = type;
+		((TextureRegionDrawable)body.getDrawable()).setRegion(new TextureRegion(GameAssets.i.hero, 0, type * 64, 64, 64));
+		// TODO some animations !
 	}
 	
 	@Override
@@ -81,10 +91,16 @@ public class HeroActor extends Group
 	public void addCoin(CoinActor coin) {
 		if(tail == null){
 			tail = this;
+		}else{
+			//tail = coins.first();
 		}
-		coin.head = tail;
+		coin.head = this;
+		if(tail instanceof CoinActor){
+			((CoinActor) tail).head = coin;
+		}
 		tail = coin;
 		coins.insert(0, coin);
 	}
+
 
 }

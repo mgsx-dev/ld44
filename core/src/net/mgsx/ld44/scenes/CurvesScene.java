@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -22,6 +23,7 @@ import net.mgsx.ld44.actors.HeroActor;
 import net.mgsx.ld44.audio.GameAudio;
 import net.mgsx.ld44.model.CurrencyCurve;
 import net.mgsx.ld44.model.CurrencyGame;
+import net.mgsx.ld44.model.GameRules;
 import net.mgsx.ld44.screens.GameScreen;
 import net.mgsx.ld44.utils.Scene;
 
@@ -30,7 +32,7 @@ public class CurvesScene extends Group implements Scene{
 	private CurrencyGame game;
 	private ShapeRenderer shapeRenderer;
 	public final Vector2 worldCenter = new Vector2(0,0);
-	private float stepSize = 60 * 2;
+	private float stepSize = 400;
 	private HeroActor hero;
 	private static final Vector2 point = new Vector2();
 	private float t;
@@ -38,10 +40,17 @@ public class CurvesScene extends Group implements Scene{
 	private Array<Actor> entities = new Array<Actor>();
 	
 	private float heroCurveTime;
-	private float worldSpeed = 100;
+	private float worldSpeed = 200;
 
 	private final static Array<CoinActor> nextCoins = new Array<CoinActor>();
 	private final static Array<CoinActor> toRemoveCoins = new Array<CoinActor>();
+	
+	private static final float LOCK_FOR_FUSION = 2;
+	private static final float LOCK_FOR_HERO_TRANSFORM = 8;
+	
+	private static final int MAX_QUEUE = 5;
+	
+	private float lockBar = 0;
 	
 	// TODO plae and check bonus and other entities ...
 	
@@ -60,35 +69,23 @@ public class CurvesScene extends Group implements Scene{
 		for(int i=0 ; i<3 ; i++){
 			CurrencyCurve c = new CurrencyCurve().set(i, colors[i%colors.length]);
 			for(int j=0 ; j<c.controlPoints.length ; j++){
-				c.add(point.set(i * stepSize, 100));
+				c.add(point.set(j * stepSize, 100));
 			}
 			game.curves.add(c);
 			addActor(new CurveActor(shapeRenderer, c));
 		}
-		// worldCenter.x = CurrencyCurve.BUFFER_SIZE * stepSize + 500;
+		worldCenter.x = CurrencyCurve.BUFFER_SIZE * stepSize;
 		
-		hero = new HeroActor();
+		hero = new HeroActor(0);
 		hero.curve = game.curves.first();
 		addActor(hero);
 		
 		GameAudio.i.playMusicGame1();
 	}
 	
-	private float getCurveTime(float worldX, float time){
-		// worldX + time * stepSize;
-		return 0; // TODO
-	}
-	
+	// TODO when gen points : f (time) + last points position
 	private void genPoint() {
 		for(CurrencyCurve c : game.curves){
-			
-			// basis in screen
-			// c.add(point.set(worldCenter.x, MathUtils.random(260) - 20 ));
-			
-			// big random
-			// c.add(point.set(worldCenter.x, MathUtils.random(560) - 100 ));
-			
-			// TODO accumulate new wave or use perlin ...
 			
 			float freq = .1f;
 			c.add(point.set(worldCenter.x,
@@ -98,19 +95,11 @@ public class CurvesScene extends Group implements Scene{
 							c.index * 100) * 1 + 100
 					)));
 			
-			genBonus();
-			// test add bonus
-			/*
-			CoinActor coinActor = new CoinActor(MathUtils.random(2));
-			addActor(coinActor);
-			coinActor.setPosition(point.x, point.y + 6 * 32f);
-			
-			entities.add(coinActor);
-			*/
+			// genBonus();
 		}
 	}
 	
-	private float compute(float worldX){
+	private float worldToCurveTime(float worldX){
 		int worldStep = (int)(worldX / stepSize);
 		float worlRemain = worldX / stepSize - worldStep;
 		
@@ -123,102 +112,118 @@ public class CurvesScene extends Group implements Scene{
 		return t2;
 	}
 	
+	private float getCurveTime(float time) {
+		return worldToCurveTime(time * worldSpeed) + .01f;
+	}
+	
 	@Override
 	public void act(float delta) {
-		worldSpeed = 200;
 		
-		if(GameAudio.i.isJustBar(4)){
-			genBonus();
-		}
-		
-		for(CurrencyCurve c : game.curves){
-			c.update();
-		}
-		
-		stepSize = 400;
-		
-		float lastX = worldCenter.x;
-		worldCenter.x += delta * worldSpeed;
-		Camera cam = getStage().getCamera();
-		if((int)(lastX / stepSize) != (int)(worldCenter.x / stepSize)){
-			genPoint();
-			// t -= 1f / (CurrencyCurve.BUFFER_SIZE);
-		}
-		// t = (worldCenter.x / stepSize) % 1f; // * game.curves.first().getNormal(point, t).len();
-		
-		t += delta * .05f;
-		
-		t = MathUtils.clamp(t, 0, 1);
-		
-		CurrencyCurve c = hero.curve;
-		Vector2 a = c.controlPoints[c.controlPointsLength-2];
-		Vector2 b = c.controlPoints[c.controlPointsLength-1];
-		
-
-		float t2 = compute(worldCenter.x);
-		float curY = point.y;
-		
-		heroCurveTime = t2;
-		
-		c.getPosition(point, t2);
-		hero.setX(point.x);
-		
-		if(hero.jumpHeight > 0 && hero.baseY + hero.jumpHeight > point.y || hero.jumpVel > 0){
-			hero.setY(hero.baseY + hero.jumpHeight);
-			
-			// test other curves above
-			for(CurrencyCurve c2 : game.curves){
-				c2.getPosition(point, t2);
-				if(true){
-					if(point.y < hero.baseY + hero.jumpHeight && point.y > curY){
-						hero.curve = c2;
-						hero.jumpHeight += -point.y + hero.baseY;
-						hero.baseY = point.y;
-						curY = point.y;
-						
-					}
-				}
+		float moveDelta = delta;
+		if(lockBar > 0){
+			if(GameAudio.i.isJustBar(lockBar, 0)){
+				lockBar = 0;
+			}else{
+				moveDelta = 0;
 			}
-			
-		}else{
-			hero.jumpVel = 0;
-			hero.jumpHeight = 0;
-			hero.setY(hero.baseY = point.y);
 		}
 		
-//		if(hero.baseY + hero.jumpHeight < curY){
-//			hero.jump = 0;
-//			hero.jumpVel = 0;
-//			hero.jumpHeight = 0;
+		worldSpeed = 500;
+		
+		// TODO Spawn bonus logic
+//		if(GameAudio.i.isJustBar(4)){
+//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(0f)));
+//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(.5f)));
+//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(1)));
+//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(1.5f)));
+//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(2f)));
 //		}
 		
-		cam.position.x = hero.getX(Align.center) + GameScreen.WORLD_WIDTH/4;
-		cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
+		Camera cam = getStage().getCamera();
 		
-		// XXX cam zoom debug
-		((OrthographicCamera)cam).zoom = 1.5f;
-		
-		while(hero.coins.size > 10){
-			hero.coins.pop().addAction(
-					Actions.sequence(
-							Actions.parallel(
-									Actions.scaleBy(0.5f, 0.5f, 1f, Interpolation.pow2), 
-									Actions.alpha(0, 1f)), 
-						Actions.removeActor()
-					)
-				);
-			updateHeroTail(this, hero);
-		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.Z)){
-			hero.coins.removeIndex(0).remove();
-			updateHeroTail(this, hero);
-		}
-		if(Gdx.input.isKeyJustPressed(Input.Keys.E)){
-			if(hero.coins.size > 0){
-				hero.coins.add(hero.coins.removeIndex(0));
+		// TODO split in different method r class
+		if(lockBar <= 0){
+			
+			if(GameAudio.i.isJustBar(1, 0)){
+				spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(0f)));
+			}
+			
+			for(CurrencyCurve c : game.curves){
+				c.update();
+			}
+			
+			
+			float lastX = worldCenter.x;
+			worldCenter.x += moveDelta * worldSpeed;
+			if((int)(lastX / stepSize) != (int)(worldCenter.x / stepSize)){
+				genPoint();
+			}
+			
+			
+			float t2 = worldToCurveTime(worldCenter.x);
+			float curY = point.y;
+			
+			heroCurveTime = t2;
+
+			hero.curve.getPosition(point, t2);
+			hero.setX(point.x);
+			
+			if(hero.jumpHeight > 0 && hero.baseY + hero.jumpHeight > point.y || hero.jumpVel > 0){
+				hero.setY(hero.baseY + hero.jumpHeight);
+				
+				// test other curves above
+				for(CurrencyCurve c2 : game.curves){
+					c2.getPosition(point, t2);
+					if(true){
+						if(point.y < hero.baseY + hero.jumpHeight && point.y > curY){
+							hero.curve = c2;
+							hero.jumpHeight += -point.y + hero.baseY;
+							hero.baseY = point.y;
+							curY = point.y;
+							
+						}
+					}
+				}
+				
+			}else{
+				hero.jumpVel = 0;
+				hero.jumpHeight = 0;
+				hero.setY(hero.baseY = point.y);
+			}
+			
+			
+			cam.position.x = hero.getX(Align.center) + GameScreen.WORLD_WIDTH/4;
+			cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
+			
+			// XXX cam zoom debug
+			((OrthographicCamera)cam).zoom = 1.5f;
+			
+			while(hero.coins.size > MAX_QUEUE){
+				hero.coins.pop().addAction(
+						Actions.sequence(
+								Actions.parallel(
+										Actions.scaleBy(0.5f, 0.5f, 1f, Interpolation.pow2), 
+										Actions.alpha(0, 1f)), 
+								Actions.removeActor()
+								)
+						);
 				updateHeroTail(this, hero);
 			}
+			if(Gdx.input.isKeyJustPressed(Input.Keys.Z)){
+				if(hero.coins.size > 0){
+					hero.coins.removeIndex(0).remove();
+					updateHeroTail(this, hero);
+				}
+			}
+			if(Gdx.input.isKeyJustPressed(Input.Keys.E)){
+				if(hero.coins.size > 0){
+					hero.coins.add(hero.coins.removeIndex(0));
+					updateHeroTail(this, hero);
+				}
+			}
 		}
+		
+		
 		
 		for(Actor e : entities){
 			if(e.getParent() == null){
@@ -235,7 +240,8 @@ public class CurvesScene extends Group implements Scene{
 					if(coin.head == null){
 						hero.addCoin(coin);
 						updateHeroTail(this, hero);
-						GameAudio.i.playGrabCoin(coin.type);
+						
+						GameAudio.i.playGrabCoinSync(coin.type, .5f);
 						coin.addAction(Actions.sequence(
 								Actions.scaleTo(2, 2, .1f, Interpolation.sine),
 								Actions.scaleTo(1, 1, .5f, Interpolation.elasticOut)
@@ -253,8 +259,39 @@ public class CurvesScene extends Group implements Scene{
 
 	
 
+
+	private void spawnBonus(float curveTime) {
+		// TODO not specially hero curve
+		
+		hero.curve.getPosition(point, curveTime);
+		
+		
+		CoinActor coinActor = new CoinActor(GameRules.randomCoinTypeFor(hero.type)); // TODO not random sequence
+		
+		// TODO séparer dans un swpawner de bonus : some predefined seqs !
+		
+		// spawn actor with rythm
+		coinActor.setScale(4);
+		coinActor.getColor().a = 0f;
+		addActor(coinActor);
+		
+		coinActor.addAction(Actions.sequence(syncAction(1f), Actions.parallel(
+				Actions.scaleTo(1, 1, .5f, Interpolation.pow3InInverse),
+				Actions.alpha(1, .2f, Interpolation.linear))));
+		
+		coinActor.setPosition(point.x, point.y + 1 * 32f);
+		
+		
+		
+		entities.add(coinActor);
+	}
+
+	private Action syncAction(float barPrecision) {
+		return Actions.delay(GameAudio.i.getNextBarTimeRemain(barPrecision));
+	}
+
 	private void genBonus() {
-		hero.curve.getPosition(point, heroCurveTime + GameAudio.i.getNextBarDelay(4) / stepSize);
+		hero.curve.getPosition(point, heroCurveTime + GameAudio.i.getBarDuration(4) / stepSize);
 		CoinActor coinActor = new CoinActor(MathUtils.random(2));
 		addActor(coinActor);
 		coinActor.setPosition(point.x, point.y + 1 * 32f);
@@ -263,34 +300,36 @@ public class CurvesScene extends Group implements Scene{
 
 	}
 
-	public static void updateHeroTail(Group container, HeroActor hero)
+	public void updateHeroTail(Group container, HeroActor hero)
 	{
 		boolean enabled = true;
 		if(!enabled) return;
 		
 		
 		
-		
+		// TODO handle head (hero) transform
 		
 		toRemoveCoins.clear();
 		nextCoins.clear();
 		int ctype = -1;
 		int count = 0;
 		int groupSizeForType = -1;
+		
 		for(int i=hero.coins.size-1 ; i>=0 ; i--){
 			CoinActor coin = hero.coins.get(i);
 			if(count == 0){
 				ctype = coin.type;
 				count = 1;
-				// XXX true => groupSizeForType = ctype % 3 == 2 ? 2 : 5;
-				groupSizeForType = ctype % 3 == 2 ? 2 : 2;
+				groupSizeForType = GameRules.groupSizeForCoinType(ctype);
+				// Fake : groupSizeForType = ctype % 3 == 2 ? 2 : 2;
 				toRemoveCoins.add(coin);
 			}else{
 				if(coin.type == ctype){
 					count++;
+					toRemoveCoins.add(coin);
 					if(count >= groupSizeForType){
 						
-						CoinActor newCoin = new CoinActor(ctype + 2);
+						CoinActor newCoin = new CoinActor(GameRules.coinTransformType(ctype));
 						newCoin.setPosition(toRemoveCoins.first().getX(), toRemoveCoins.first().getY());
 						container.addActor(newCoin);
 						
@@ -299,11 +338,15 @@ public class CurvesScene extends Group implements Scene{
 								Actions.scaleTo(1, 1, .5f, Interpolation.elasticOut)
 								));
 						
-						nextCoins.add(newCoin);
+						lockBar = LOCK_FOR_FUSION;
+						
+						//nextCoins.add(newCoin);
 						while(toRemoveCoins.size > 0){
 							toRemoveCoins.pop().remove();
 						}
-						count = 0;
+						count = 1;
+						ctype = newCoin.type;
+						toRemoveCoins.add(newCoin);
 						i++;
 					}
 				}else{
@@ -315,7 +358,20 @@ public class CurvesScene extends Group implements Scene{
 				}
 			}
 		}
+		// check hero
+		if(hero.type == ctype && count + 1 >= GameRules.groupSizeForCoinType(ctype)){
+			while(toRemoveCoins.size > 0){
+				toRemoveCoins.pop().remove();
+			}
+			hero.setType(GameRules.coinTransformType(ctype));
+			
+			lockBar = LOCK_FOR_HERO_TRANSFORM;
+		}
+		
+		
 		nextCoins.addAll(toRemoveCoins);
+		
+		
 		toRemoveCoins.clear();
 		hero.coins.clear();
 		
@@ -329,7 +385,7 @@ public class CurvesScene extends Group implements Scene{
 		hero.coins.addAll(nextCoins);
 		nextCoins.clear();
 		
-		hero.tail = hero.coins.peek();
+		hero.tail = hero.coins.size > 0 ? hero.coins.peek() : hero;
 		
 	}
 

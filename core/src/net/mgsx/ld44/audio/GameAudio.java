@@ -1,7 +1,9 @@
 package net.mgsx.ld44.audio;
 
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.Array;
 
 import net.mgsx.ld44.assets.GameAssets;
 
@@ -18,23 +20,48 @@ public class GameAudio {
 	private float lastPosition;
 	private float currentPosition;
 	private float bpm;
+	
+	private static final class SfxPlay{
+		public Sound sound;
+		public float barPrecision;
+		public SfxPlay(Sound sound, float barPrecision) {
+			super();
+			this.sound = sound;
+			this.barPrecision = barPrecision;
+		}
+		
+	}
+	private Array<SfxPlay> scheduledSfx = new Array<SfxPlay>();
 
 	public GameAudio() {
 	}
 	
 	public void update(float deltaTime) {
+		
+		// XXX
+		sounds.soundMasterVolume = .5f;
+		
 		musics.update(deltaTime);
 		sounds.update(deltaTime);
 		
 		if(currentMusic != null){
 			lastPosition = currentPosition;
-			currentPosition = currentMusic.getPosition() - 0.45f; // TODO -45 phase game dependents (jump, etc)
+			currentPosition = currentMusic.getPosition(); 
+		}
+		for(int i=0 ; i<scheduledSfx.size ; ){
+			SfxPlay sfx = scheduledSfx.get(i);
+			if(isJustBar(sfx.barPrecision,  - 0.41f)){ // TODO -45 phase game dependents (jump, etc)
+				sounds.play(sfx.sound);
+				scheduledSfx.removeIndex(i);
+			}else{
+				i++;
+			}
 		}
 	}
 	
-	public boolean isJustBar(float bar) {
-		int quantizedPos = MathUtils.floor(currentPosition * (bpm / 60) / bar);
-		int lastQuantizedPos = MathUtils.floor(lastPosition * (bpm / 60) / bar);
+	public boolean isJustBar(float bar, float offset) {
+		int quantizedPos = MathUtils.floor((currentPosition + offset) * (bpm / 60) / bar);
+		int lastQuantizedPos = MathUtils.floor((lastPosition + offset) * (bpm / 60) / bar);
 		return quantizedPos > lastQuantizedPos;
 	}
 	
@@ -50,6 +77,10 @@ public class GameAudio {
 		
 		//sounds.play(GameAssets.i.sfxCoin1);
 		sounds.play(GameAssets.i.sfxSplashs.random());
+	}
+	public void playGrabCoinSync(int type, float barPrecision) {
+		scheduledSfx.add(new SfxPlay(GameAssets.i.sfxSplashs.random(), barPrecision));
+		
 	}
 
 	public void playMusicGame(Music music) {
@@ -68,9 +99,16 @@ public class GameAudio {
 		playMusicGame(GameAssets.i.music2);
 	}
 
-	public float getNextBarDelay(float barLength) {
+	public float getBarDuration(float barLength) {
 		return barLength / (bpm / 60f);
 	}
+
+	public float getNextBarTimeRemain(float barPrecision) {
+		int quantizedPos = MathUtils.floor(currentPosition * (bpm / 60) / barPrecision);
+		float nextTime = (quantizedPos + 1) * barPrecision / (bpm / 60);
+		return nextTime - currentPosition;
+	}
+	
 
 
 	
