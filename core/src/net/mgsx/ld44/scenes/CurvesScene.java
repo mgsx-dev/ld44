@@ -2,7 +2,6 @@ package net.mgsx.ld44.scenes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -36,9 +35,9 @@ public class CurvesScene extends Group implements Scene{
 	private float t;
 	
 	private Array<Actor> entities = new Array<Actor>();
-	private Music currentMusic;
-	private float lastPosition;
+	
 	private float heroCurveTime;
+	private float worldSpeed = 100;
 
 	private final static Array<CoinActor> nextCoins = new Array<CoinActor>();
 	private final static Array<CoinActor> toRemoveCoins = new Array<CoinActor>();
@@ -71,8 +70,12 @@ public class CurvesScene extends Group implements Scene{
 		hero.curve = game.curves.first();
 		addActor(hero);
 		
-		currentMusic = GameAudio.i.playMusicGame();
-		lastPosition = 0f;
+		GameAudio.i.playMusicGame1();
+	}
+	
+	private float getCurveTime(float worldX, float time){
+		// worldX + time * stepSize;
+		return 0; // TODO
 	}
 	
 	private void genPoint() {
@@ -106,19 +109,26 @@ public class CurvesScene extends Group implements Scene{
 		}
 	}
 	
+	private float compute(float worldX){
+		int worldStep = (int)(worldX / stepSize);
+		float worlRemain = worldX / stepSize - worldStep;
+		
+//		hero.setX(MathUtils.lerp(a.x, b.x, t));
+//		hero.setY(MathUtils.lerp(a.y, b.y, t));
+
+		// TODO 1.4f ?? len or average seg len ? or derivative
+		float t2 = 1.43f*(CurrencyCurve.BUFFER_SIZE/4 + worlRemain) / (float)CurrencyCurve.BUFFER_SIZE;
+		// float t2 = t;
+		return t2;
+	}
+	
 	@Override
 	public void act(float delta) {
+		worldSpeed = 200;
 		
-		float bpm = 148 / 2f; // 120
-		
-		float musicPos = currentMusic.getPosition() - 0.45f;
-		int quantizedPos = MathUtils.floor(musicPos * (bpm / 60));
-		int lastQuantizedPos = MathUtils.floor(lastPosition * (bpm / 60));
-		if(quantizedPos > lastQuantizedPos){
+		if(GameAudio.i.isJustBar(4)){
 			genBonus();
-			System.out.println(quantizedPos);
 		}
-		lastPosition = musicPos;
 		
 		for(CurrencyCurve c : game.curves){
 			c.update();
@@ -127,26 +137,24 @@ public class CurvesScene extends Group implements Scene{
 		stepSize = 400;
 		
 		float lastX = worldCenter.x;
-		worldCenter.x += delta * stepSize;
+		worldCenter.x += delta * worldSpeed;
 		Camera cam = getStage().getCamera();
 		if((int)(lastX / stepSize) != (int)(worldCenter.x / stepSize)){
 			genPoint();
-			t -= 1;
+			// t -= 1f / (CurrencyCurve.BUFFER_SIZE);
 		}
-		t = (worldCenter.x / stepSize) % 1f; // * game.curves.first().getNormal(point, t).len();
+		// t = (worldCenter.x / stepSize) % 1f; // * game.curves.first().getNormal(point, t).len();
+		
+		t += delta * .05f;
+		
+		t = MathUtils.clamp(t, 0, 1);
 		
 		CurrencyCurve c = hero.curve;
 		Vector2 a = c.controlPoints[c.controlPointsLength-2];
 		Vector2 b = c.controlPoints[c.controlPointsLength-1];
 		
-		int worldStep = (int)(worldCenter.x / stepSize);
-		float worlRemain = worldCenter.x / stepSize - worldStep;
-		
-//		hero.setX(MathUtils.lerp(a.x, b.x, t));
-//		hero.setY(MathUtils.lerp(a.y, b.y, t));
 
-		// TODO 1.4f ?? len or average seg len ? or derivative
-		float t2 = 1.4f*(c.controlPointsLength/4 + worlRemain) / (float)c.controlPointsLength;
+		float t2 = compute(worldCenter.x);
 		float curY = point.y;
 		
 		heroCurveTime = t2;
@@ -242,7 +250,7 @@ public class CurvesScene extends Group implements Scene{
 	
 
 	private void genBonus() {
-		hero.curve.getPosition(point, heroCurveTime);
+		hero.curve.getPosition(point, heroCurveTime + GameAudio.i.getNextBarDelay(4) / stepSize);
 		CoinActor coinActor = new CoinActor(MathUtils.random(2));
 		addActor(coinActor);
 		coinActor.setPosition(point.x, point.y + 1 * 32f);

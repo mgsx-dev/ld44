@@ -1,14 +1,14 @@
 package net.mgsx.ld44.model;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.CatmullRomSpline;
+import com.badlogic.gdx.math.BSpline;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
 public class CurrencyCurve {
 	public static final int BUFFER_SIZE = 10;
 	private static final Vector2 normal = new Vector2();
-	public CatmullRomSpline<Vector2> spline = new CatmullRomSpline<Vector2>();
+	public BSpline<Vector2> spline = new BSpline<Vector2>();
 	public int index;
 	public Color color;
 	public Vector2[] controlPoints = new Vector2[BUFFER_SIZE];
@@ -44,7 +44,7 @@ public class CurrencyCurve {
 		}
 		controlPoints[controlPointsLength].set(point);
 		controlPointsLength++;
-		spline.set(controlPoints, false);
+		spline.set(controlPoints, 3, false);
 		
 		valid = false;
 	}
