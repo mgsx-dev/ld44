@@ -77,6 +77,8 @@ skinPackingTask.dependsOn += skinUnpackedTasks
 
 task buildAssets(group: 'gdx', dependsOn: [skinPackingTask]){}
 
+buildAssets.dependsOn << gdxRawCopy("src/sprites", "../android/assets/")
+
 /** usage example :
 
 task buildAssets(group: 'gdx'){}

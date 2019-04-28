@@ -45,7 +45,7 @@ public class HeroActor extends Group
 	@Override
 	public void act(float delta) {
 		
-		((OrthographicCamera)getStage().getCamera()).zoom = 2f;
+		((OrthographicCamera)getStage().getCamera()).zoom = 1.5f;
 		
 		if(jump <= 0 && Gdx.input.isKeyJustPressed(Input.Keys.A)){
 			jump = 1;

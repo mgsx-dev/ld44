@@ -1,5 +1,6 @@
 package net.mgsx.ld44.utils;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
@@ -47,5 +48,14 @@ public class QuickGdx {
 		}
 		va.mulAdd(vc, speed);
 		a.setPosition(va.x, va.y);
+	}
+
+	public static Animation<TextureRegion> animation(Texture texture, int x, int y, int tileWidth, int tileHeight, int deltaX, int deltaY, int count) {
+		Array<TextureRegion> frames = new Array<TextureRegion>();
+		for(int i=0 ; i<count ; i++){
+			frames.add(new TextureRegion(texture, x + i * deltaX, y + i * deltaY, tileWidth, tileHeight));
+		}
+		Animation<TextureRegion> a = new Animation<TextureRegion>(1f, frames);
+		return a;
 	}
 }

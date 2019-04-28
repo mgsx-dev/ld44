@@ -1,5 +1,7 @@
 package net.mgsx.ld44.audio;
 
+import com.badlogic.gdx.audio.Music;
+
 import net.mgsx.ld44.assets.GameAssets;
 
 /**
@@ -25,6 +27,18 @@ public class GameAudio {
 	
 	public void playJump(){
 		sounds.play(GameAssets.i.sfxJump);
+	}
+
+	public void playGrabCoin(int type) {
+		
+		//sounds.play(GameAssets.i.sfxCoin1);
+		sounds.play(GameAssets.i.sfxSplashs.random());
+	}
+
+	public Music playMusicGame() {
+		Music music = GameAssets.i.music2;
+		musics.replaceMusics(music, true);
+		return music;
 	}
 
 	
