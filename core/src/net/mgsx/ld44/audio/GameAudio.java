@@ -140,6 +140,10 @@ public class GameAudio {
 		float nextTime = (quantizedPos + 1) * barPrecision / (bpm / 60);
 		return nextTime - currentPosition;
 	}
+
+	public float timeToRad() {
+		return (currentPosition * (bpm/60f)) * MathUtils.PI;
+	}
 	
 
 

@@ -16,10 +16,12 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
+import net.mgsx.ld44.actors.ClockActor;
 import net.mgsx.ld44.actors.CoinActor;
 import net.mgsx.ld44.actors.CurveActor;
 import net.mgsx.ld44.actors.GridActor;
 import net.mgsx.ld44.actors.HeroActor;
+import net.mgsx.ld44.actors.PigActor;
 import net.mgsx.ld44.audio.GameAudio;
 import net.mgsx.ld44.model.CurrencyCurve;
 import net.mgsx.ld44.model.CurrencyGame;
@@ -51,10 +53,13 @@ public class CurvesScene extends Group implements Scene{
 	private static final int MAX_QUEUE = 5;
 	
 	private float lockBar = 0;
+	private ClockActor clockActor;
 	
 	// TODO plae and check bonus and other entities ...
 	
 	public CurvesScene() {
+		
+		addActor(clockActor = new ClockActor());
 		
 		addActor(new GridActor());
 		
@@ -225,21 +230,49 @@ public class CurvesScene extends Group implements Scene{
 					updateHeroTail(this, hero);
 				}
 			}
+			
+			if(Gdx.input.isKeyJustPressed(Input.Keys.S) && hero.jump<=0){
+				// FIXME a little buggy ... fall at down level
+				hero.setY(hero.baseY = hero.baseY - 50);
+				hero.jumpVel = -4;
+				hero.jump = 1;
+				for(CurrencyCurve c2 : game.curves){
+					if(c2 == hero.curve) continue;
+					c2.getPosition(point, t2);
+					if(true){
+						if(point.y < hero.baseY + hero.jumpHeight && point.y > curY){
+							hero.curve = c2;
+							hero.jumpHeight += -point.y + hero.baseY;
+							hero.baseY = point.y;
+							curY = point.y;
+						}
+					}
+				}
+				hero.setY(hero.baseY = hero.baseY - 50);
+			}
+			
+			if(Gdx.input.isKeyJustPressed(Input.Keys.G)){
+				PigActor pig = new PigActor();
+				addActor(pig);
+				hero.curve.getPosition(point, heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)));
+				pig.setPosition(point.x, point.y);
+				entities.add(pig);
+			}
 		}
 		
 		
 		
 		for(Actor e : entities){
-			if(e.getParent() == null){
-				
+			if(e.getX() < getStage().getCamera().position.x - getStage().getWidth()){
+				e.remove();
 			}
 			
 			float hx = hero.getX();
 			float hy = hero.getY();
 			float ex = e.getX();
 			float ey = e.getY();
-			if(point.set(ex - hx, ey - hy).len() < 64f - 20){ // tODO radius
-				if(e instanceof CoinActor){
+			if(e instanceof CoinActor){
+				if(point.set(ex - hx, ey - hy).len() < 64f - 20){ // tODO radius
 					CoinActor coin = (CoinActor) e;
 					if(coin.head == null){
 						hero.addCoin(coin);
@@ -251,8 +284,33 @@ public class CurvesScene extends Group implements Scene{
 								Actions.scaleTo(1, 1, .5f, Interpolation.elasticOut)
 								));
 					}
+				}
+				// e.remove();
+			}else if(e instanceof PigActor){
+				PigActor pig = (PigActor)e;
+				if(point.set(pig.centerX() - hx, pig.centerY() - hy).len() < pig.radius + 32){ // tODO radius
+					e.setOrigin(Align.center);
+					e.addAction(Actions.sequence(
+							Actions.parallel(
+									Actions.scaleBy(2, 2, .3f),
+									Actions.moveBy(10, 100, 1f, Interpolation.pow3InInverse)
+									),
+							Actions.removeActor()
+							));
 					
-					// e.remove();
+					if(hero.coins.size > 0){
+						while(hero.coins.size>0) {
+							hero.coins.removeIndex(0).remove();
+						}
+					}else{
+						if(hero.type>0){
+							hero.setType(hero.type-1);
+						}else{
+							// TODO die !
+						}
+					}
+					lockBar = 4;
+					updateHeroTail(this, hero);
 				}
 			}
 		}

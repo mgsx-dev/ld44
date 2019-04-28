@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
 
@@ -59,5 +60,9 @@ public class QuickGdx {
 		}
 		Animation<TextureRegion> a = new Animation<TextureRegion>(1f, frames);
 		return a;
+	}
+
+	public static Image image(Texture texture, int x, int y, int w, int h) {
+		return new Image(new TextureRegion(texture, x,y,w,h));
 	}
 }

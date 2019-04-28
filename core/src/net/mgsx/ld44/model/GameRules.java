@@ -9,7 +9,7 @@ public class GameRules {
 	}
 	
 	public static int coinTransformType(int coinType){
-		return (coinType%3 == 2 ? coinType+1 : coinType+2) % 9;
+		return (coinType%3 == 2 ? coinType+1 : coinType+2) % 16;
 	}
 
 	public static int randomCoinTypeFor(int type) {
@@ -17,6 +17,6 @@ public class GameRules {
 		int maxType = type+1;
 //		maxType = type; // XXX
 //		minType = type; // XXX
-		return MathUtils.random(minType, maxType) % 9;
+		return MathUtils.random(minType, maxType) % 16;
 	}
 }

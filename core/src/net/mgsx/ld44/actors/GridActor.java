@@ -6,7 +6,6 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import net.mgsx.ld44.assets.GameAssets;
 
 public class GridActor extends Actor {
-	private float dx;
 	
 	public GridActor() {
 		// TODO Auto-generated constructor stub
@@ -14,22 +13,22 @@ public class GridActor extends Actor {
 	
 	@Override
 	public void act(float delta) {
-		dx += delta * 0f;
 		super.act(delta);
 	}
 	
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
-		batch.setColor(1,1,1,.2f);
-		dx = getStage().getCamera().position.x/1000f;
+		batch.setColor(.9f,.5f,1,.2f);
+		float dx = getStage().getCamera().position.x/300f;
+		float dy = getStage().getCamera().position.y/300f;
 		batch.draw(GameAssets.i.grid1, 
 				(getStage().getCamera().position.x - getStage().getWidth()) ,  
 				getStage().getCamera().position.y - getStage().getHeight(), 
 				
 				getStage().getWidth() * 2, 
-				getStage().getHeight() * 2, 
+				getStage().getHeight() * 2 + getStage().getCamera().position.y/2f, 
 				
-				dx, 0, 
-				dx + 2, 16);
+				dx, dy, 
+				dx + 4, dy + 4);
 	}
 }
