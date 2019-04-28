@@ -3,11 +3,13 @@ package net.mgsx.ld44.actors;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
 import net.mgsx.ld44.assets.GameAssets;
 import net.mgsx.ld44.audio.GameAudio;
+import net.mgsx.ld44.model.MetaGame;
 import net.mgsx.ld44.utils.QuickGdx;
 
 public class ClockActor extends Group
@@ -17,15 +19,15 @@ public class ClockActor extends Group
 	private Image hours;
 	private Image minutes;
 
-	private float time;
 	private Array<Image> dots = new Array<Image>();
+	private Label label;
 	
 	public ClockActor() {
 		back = QuickGdx.image(GameAssets.i.hero, 10 * 64, 0 * 64, 6 * 64, 6 * 64);
 		center = QuickGdx.image(GameAssets.i.hero, 10 * 64, 6 * 64, 1 * 64, 1 * 64);
 		minutes = QuickGdx.image(GameAssets.i.hero, 11 * 64, 6 * 64, 5 * 64, 1 * 64);
 		hours = QuickGdx.image(GameAssets.i.hero, 12 * 64, 7 * 64, 4 * 64, 1 * 64);
-		
+		label = new Label("00:00", GameAssets.i.skin);
 		int N = 12;
 		for(int i=0 ; i<N ; i++){
 			Image dot = QuickGdx.image(GameAssets.i.hero, 10 * 64, 6 * 64, 1 * 64, 1 * 64);
@@ -40,11 +42,19 @@ public class ClockActor extends Group
 		addActor(hours);
 		addActor(minutes);
 		addActor(center);
+		addActor(label);
+		label.setPosition(0, 0, Align.center);
 	}
 	
 	@Override
 	public void act(float delta) {
-		time += delta;
+		MetaGame.i.game.time += delta;
+		
+		int value = MathUtils.ceil((MetaGame.i.game.totalTime - MetaGame.i.game.time)*100*4);
+		int h1 = (value/100)/60;
+		int m1 = (value/100)%60;
+		int s1 = value%100;
+		label.setText(String.valueOf(h1 + ":" + m1 + ":" + s1));
 		
 		getColor().a = .3f;
 		setScale(2);
@@ -82,7 +92,7 @@ public class ClockActor extends Group
 		minutes.setPosition(-32, -32);
 		
 		
-		float dateTime = (time / (60 * 10)) * 12; // 10 minute : 12h
+		float dateTime = (MetaGame.i.game.time / MetaGame.i.game.totalTime) * 12; // 10 minute : 12h
 		
 		float h = dateTime / 12f;
 		float m = dateTime % 12f;

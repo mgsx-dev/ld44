@@ -52,6 +52,7 @@ public class GameAssets {
 		skin = new Skin(Gdx.files.internal("skins/game-skin.json"));
 		
 		hero = new Texture("hero.png");
+		hero.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
 		
 		heroBodyRegion = new TextureRegion(hero, 0, 0, 64, 64);;
 		
