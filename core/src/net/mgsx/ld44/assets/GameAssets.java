@@ -39,21 +39,15 @@ public class GameAssets {
 
 	public Texture grid1;
 	
-	// TODO declare your assets
-	
 	
 	public GameAssets() {
 		assetManager = new AssetManager();
-		
-		// load your assets with asset manager (optional)
 	}
 
 	public void finish() {
 		assetManager.finishLoading();
 		
-		// fetch assets (optional)
-		
-		// load directly (optional)
+		// load directly direct
 		skin = new Skin(Gdx.files.internal("skins/game-skin.json"));
 		
 		hero = new Texture("hero.png");

@@ -2,7 +2,6 @@ package net.mgsx.ld44.actors;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -44,8 +43,6 @@ public class HeroActor extends Group
 	
 	@Override
 	public void act(float delta) {
-		
-		((OrthographicCamera)getStage().getCamera()).zoom = 1.5f;
 		
 		if(jump <= 0 && Gdx.input.isKeyJustPressed(Input.Keys.A)){
 			jump = 1;

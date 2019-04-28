@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
@@ -193,6 +194,9 @@ public class CurvesScene extends Group implements Scene{
 		
 		cam.position.x = hero.getX(Align.center) + GameScreen.WORLD_WIDTH/4;
 		cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
+		
+		// XXX cam zoom debug
+		((OrthographicCamera)cam).zoom = 1.5f;
 		
 		while(hero.coins.size > 10){
 			hero.coins.pop().addAction(
