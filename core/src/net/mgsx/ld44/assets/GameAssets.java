@@ -43,6 +43,10 @@ public class GameAssets {
 	public Sound sfxMachine;
 
 	public Sound sfxCoin;
+
+	public Texture textureTitle;
+
+	public Texture textureTuto;
 	
 	
 	public GameAssets() {
@@ -81,6 +85,9 @@ public class GameAssets {
 		
 		grid1 = new Texture("grid1.png");
 		grid1.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
+		
+		textureTitle = new Texture(Gdx.files.internal("title.png"));
+		textureTuto = new Texture(Gdx.files.internal("tuto.png"));
 	}
 	
 }

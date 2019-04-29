@@ -3,6 +3,7 @@ package net.mgsx.ld44.scenes;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -19,6 +20,9 @@ public class MenuScene extends Table implements Scene
 	public MenuScene() {
 		super(GameAssets.i.skin);
 		setFillParent(true);
+		
+		Image bg;
+		addActor(bg = new Image(GameAssets.i.textureTuto));
 		
 		GameAudio.i.playMusicIntro();
 		

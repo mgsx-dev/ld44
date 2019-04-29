@@ -30,7 +30,7 @@ public class GameScreen extends UIScreen
 	
 	public GameScreen() {
 		// super(new PixelPerfectViewport(WORLD_WIDTH, WORLD_HEIGHT), GameAssets.i.skin);
-		super(new FitViewport(WORLD_WIDTH, WORLD_HEIGHT + 100), GameAssets.i.skin);
+		super(new FitViewport(WORLD_WIDTH, WORLD_HEIGHT), GameAssets.i.skin);
 		
 		postProcessing = new PostProcessingStack();
 		postProcessing.pipeline.add(new ThresholdNode().set(.5f));

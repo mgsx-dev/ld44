@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -20,6 +21,9 @@ public class TitleScene extends Group implements Scene
 	public TitleScene() {
 		
 		setSize(GameScreen.WORLD_WIDTH, GameScreen.WORLD_HEIGHT);
+		
+		Image bg;
+		addActor(bg = new Image(GameAssets.i.textureTitle));
 		
 		Skin skin = GameAssets.i.skin;
 		Table root = new Table(skin);

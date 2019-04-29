@@ -12,7 +12,7 @@ import net.mgsx.ld44.screens.GameScreen;
 public class LD44 extends Game {
 	
 	public static final boolean debug = true; 
-	public static final int SCREEN_WIDTH = 600;
+	public static final int SCREEN_WIDTH = 630;
 	public static final int SCREEN_HEIGHT = 300;
 
 	public boolean paused = false; 
