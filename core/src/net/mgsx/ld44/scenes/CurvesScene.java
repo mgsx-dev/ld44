@@ -319,7 +319,7 @@ public class CurvesScene extends Group implements Scene{
 			
 			// XXX cam zoom debug
 			float t = hero.type / 15f;
-			float expectedoom = MathUtils.lerp(2f, 1f, t*t*t );
+			float expectedoom = MathUtils.lerp(2f, 1.5f, t*t*t );
 			((OrthographicCamera)cam).zoom = MathUtils.lerp(((OrthographicCamera)cam).zoom, expectedoom, delta * .5f);
 			
 			while(hero.coins.size > MAX_QUEUE){

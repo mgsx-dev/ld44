@@ -123,11 +123,11 @@ public class GameRules {
 	}
 
 	public static float getCurveAmplitude(HeroActor hero) {
-		return MathUtils.lerp(1.5f, 2, MathUtils.clamp(hero.type/3f, 0, 1)) ;
+		return MathUtils.lerp(.5f, 1.5f, MathUtils.clamp(hero.type/6f, 0, 1)) ;
 	}
 
 	public static float getCurveFrequency(HeroActor hero) {
-		return MathUtils.lerp(1.5f, .1f, hero.type/15f) ;
+		return MathUtils.lerp(.1f, .1f, hero.type/15f) ;
 	}
 
 }

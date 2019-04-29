@@ -77,7 +77,11 @@ public class GameAudio {
 					if(e.status == 144){ // note on
 						float rate = 1f / (midiSequence.scale * 1);
 						// beats * 4
-						if(e.time*rate < currentPosition * (bpm/60f) && e.time * rate >= lastPosition * (bpm/60f)){
+						
+						float delay = 0f;
+						float basePosition = currentPosition - getBarDuration(delay);
+						float lastBasePosition = lastPosition - getBarDuration(delay);
+						if(e.time*rate < basePosition * (bpm/60f) && e.time * rate >= lastBasePosition * (bpm/60f)){
 //							System.out.println(e.time);
 //							System.out.println(currentPosition);
 							lastEvents.add(e);
