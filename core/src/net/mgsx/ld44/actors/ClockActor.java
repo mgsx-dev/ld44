@@ -1,5 +1,6 @@
 package net.mgsx.ld44.actors;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -36,6 +37,8 @@ public class ClockActor extends Group
 			dot.setPosition(MathUtils.cosDeg(angle) * r, MathUtils.sinDeg(angle) * r, Align.center);
 			addActor(dot);
 			dots.add(dot);
+			// dot.setColor(Color.GRAY);
+			dot.getColor().a = .3f;
 		}
 		
 		addActor(back);
@@ -56,10 +59,18 @@ public class ClockActor extends Group
 		int s1 = value%100;
 		label.setText(String.valueOf(h1 + ":" + m1 + ":" + s1));
 		
-		getColor().a = .3f;
+		getColor().a = 1f;
+		
+		back.setColor(Color.GRAY);
+		back.getColor().a = 0f;
+		hours.getColor().a = 1f;
+		minutes.getColor().a = 1f;
+		center.getColor().a = 1f;
+		label.getColor().a = 1f;
 		setScale(2);
 		
-		setPosition(getStage().getCamera().position.x, getStage().getCamera().position.y);
+		setScale(1f);
+		setPosition(getStage().getCamera().position.x + 600, getStage().getCamera().position.y);
 		
 		hours.setOrigin(32, 32);
 		minutes.setOrigin(32, 32);

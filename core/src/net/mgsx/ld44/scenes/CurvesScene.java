@@ -60,11 +60,12 @@ public class CurvesScene extends Group implements Scene{
 	private ClockActor clockActor;
 	private HUDActor hud;
 	private Label label;
+	private GameScreen gameScreen;
 	
 	// TODO plae and check bonus and other entities ...
 	
-	public CurvesScene() {
-		
+	public CurvesScene(GameScreen gameScreen) {
+		this.gameScreen = gameScreen;
 		addActor(clockActor = new ClockActor());
 		
 		addActor(new GridActor());
@@ -129,9 +130,20 @@ public class CurvesScene extends Group implements Scene{
 		return worldToCurveTime(time * worldSpeed) + .01f;
 	}
 	
+	private void lock(float n) {
+		lockBar = n;
+		gameScreen.postProcessing.emissive2Color.a = 1f;
+	}
+	
 	@Override
 	public void act(float delta) {
 		
+		float targetAlpha = hero.type >= 15 ? 1f : hero.type==0 ? .6f : ( hero.type%2==1 ? 1 : .3f);
+		gameScreen.postProcessing.emissiveColor.a = MathUtils.lerp(gameScreen.postProcessing.emissiveColor.a, Math.min(1f, targetAlpha), delta * 1.2f);
+		
+		// emi 2
+		gameScreen.postProcessing.emissive2Color.a = MathUtils.lerp(gameScreen.postProcessing.emissive2Color.a, 0, delta * 3f);
+
 		float moveDelta = delta;
 		if(lockBar > 0){
 			if(GameAudio.i.isJustBar(lockBar, 0)){
@@ -143,7 +155,9 @@ public class CurvesScene extends Group implements Scene{
 			moveDelta = 0;
 		}
 		
-		worldSpeed = 500;
+		
+		
+		worldSpeed = 500 + hero.type * 10;
 		
 		// TODO Spawn bonus logic
 //		if(GameAudio.i.isJustBar(4)){
@@ -331,7 +345,7 @@ public class CurvesScene extends Group implements Scene{
 							// TODO die !
 						}
 					}
-					lockBar = 4;
+					lock(4);
 					updateHeroTail(this, hero);
 				}
 			}else if(e instanceof CashMachineActor){
@@ -341,7 +355,7 @@ public class CurvesScene extends Group implements Scene{
 					
 					
 					// lock all 
-					lockBar = -1; // TODO infinite
+					lock(-1); // TODO infinite
 					
 					mob.playCasino(this, hero, Actions.run(new Runnable() {
 						@Override
@@ -361,6 +375,8 @@ public class CurvesScene extends Group implements Scene{
 	
 
 
+
+	
 
 	public void addScore(int points) {
 		MetaGame.i.game.score += points;
@@ -465,7 +481,7 @@ public class CurvesScene extends Group implements Scene{
 						
 						addScore(GameRules.scoreForFusion(newCoin));
 						
-						lockBar = LOCK_FOR_FUSION;
+						lock(LOCK_FOR_FUSION);
 						
 						// nextCoins.add(newCoin);
 						while(toRemoveCoins.size > 0){
@@ -494,7 +510,7 @@ public class CurvesScene extends Group implements Scene{
 			
 			hero.setType(GameRules.coinTransformType(ctype));
 			
-			lockBar = LOCK_FOR_HERO_TRANSFORM;
+			lock(LOCK_FOR_HERO_TRANSFORM);
 		}
 		
 		

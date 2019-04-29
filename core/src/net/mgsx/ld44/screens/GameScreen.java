@@ -18,7 +18,7 @@ public class GameScreen extends UIScreen
 
 	private Scene currentScene;
 	
-	PostProcessingStack postProcessing;
+	public PostProcessingStack postProcessing;
 	
 	public GameScreen() {
 		super(new PixelPerfectViewport(WORLD_WIDTH, WORLD_HEIGHT), GameAssets.i.skin);
@@ -44,12 +44,12 @@ public class GameScreen extends UIScreen
 //			}
 //		});
 		
-		directTransition(new CurvesScene());
+		directTransition(new CurvesScene(this));
 	}
 	
 	@Override
 	public void render(float delta) {
-		postProcessing.enabled = false;
+		postProcessing.enabled = true;
 		postProcessing.begin();
 		stage.getViewport().apply();
 		super.render(delta);

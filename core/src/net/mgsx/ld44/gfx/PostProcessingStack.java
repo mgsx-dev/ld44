@@ -9,7 +9,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
 
 public class PostProcessingStack {
-
+	public final Color finalColor = new Color(1,1,1,1);
+	public final Color emissiveColor = new Color(1,1,1,1);
+	public final Color emissive2Color = new Color(1,1,1,1);
 	public final Array<Processor> pipeline = new Array<Processor>();
 	public Batch batch = new SpriteBatch();
 	public boolean enabled = true;
@@ -41,24 +43,41 @@ public class PostProcessingStack {
 			// XXX mix !
 			pipeline.first().bind();
 			Texture texture = Processor.fboStack.pop().getColorBufferTexture();
+			Texture texture2 = Processor.fboStack.pop().getColorBufferTexture();
 			
 			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 			
 			batch.getProjectionMatrix().setToOrtho2D(0, 0, 1, 1);
 			
-			batch.begin();
-			batch.draw(texture, 0, 0, 1, 1, 0, 0, 1, 1);
-			batch.end();
-			texture = Processor.fboStack.pop().getColorBufferTexture();
-
 			batch.getProjectionMatrix().setToOrtho2D(0, 0, 1, 1);
 			batch.enableBlending();
 			batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
-			float l = 1f;
-			batch.setColor(l,l,l, .3f);
+			batch.setColor(emissiveColor.r, emissiveColor.g, emissiveColor.b, emissiveColor.a);
 			batch.begin();
+			batch.draw(texture2, 0, 0, 1, 1, 0, 0, 1, 1);
+			batch.end();
+			
+			batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+			batch.begin();
+			batch.setColor(finalColor.r, finalColor.g, finalColor.b, finalColor.a);
 			batch.draw(texture, 0, 0, 1, 1, 0, 0, 1, 1);
 			batch.end();
+			
+			
+			if(emissive2Color.a > 0){
+				
+				batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
+				batch.setColor(emissive2Color.r, emissive2Color.g, emissive2Color.b, emissive2Color.a);
+				batch.begin();
+				batch.draw(texture2, 0, 0, 1, 1, 0, 0, 1, 1);
+				batch.end();
+			}
+			
+			
+			
+			
+			
+			
 			batch.setColor(Color.WHITE);
 			batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
 			//batch.disableBlending();

@@ -144,6 +144,10 @@ public class GameAudio {
 	public float timeToRad() {
 		return (currentPosition * (bpm/60f)) * MathUtils.PI;
 	}
+
+	public float getTimeNomalized(float barPrecision) {
+		return (currentPosition * (bpm/60f) / barPrecision) % 1f;
+	}
 	
 
 
