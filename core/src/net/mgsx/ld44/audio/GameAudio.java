@@ -100,13 +100,22 @@ public class GameAudio {
 	}
 	
 	
-	public void playMusicGame(Music music) {
+	private void playMusicGame(Music music) {
 		lastPosition = 0;
 		currentPosition = 0;
 		currentMusic = music;
 		musics.replaceMusics(music, true);
 	}
 	
+	public void playMusicGame(int index) {
+		if(index == 0){
+			playMusicGame1();
+		}else if(index == 1){
+			playMusicGame2();
+		}else{
+			playMusicGame3();
+		}
+	}
 	public void playMusicGame1() {
 		bpm = 180;
 		playMusicGame(GameAssets.i.musicB);
@@ -161,7 +170,7 @@ public class GameAudio {
 	}
 	public void playGrabCoinSync(int type, float barPrecision) {
 		// scheduledSfx.add(new SfxPlay(GameAssets.i.sfxSplashs.random(), barPrecision));
-		scheduledSfx.add(new SfxPlay(GameAssets.i.sfxCoin, .25f));
+		scheduledSfx.add(new SfxPlay(GameAssets.i.sfxCoins.random(), .25f));
 		// sounds.play(GameAssets.i.sfxCoin);
 	}
 	
@@ -170,8 +179,7 @@ public class GameAudio {
 	}
 
 	public void playPigCollision() {
-		// TODO ?
-		sounds.play(GameAssets.i.sfxCoinLong);
+		sounds.play(GameAssets.i.sfxMalus);
 	}
 
 	public void playCoinRight() {
@@ -184,6 +192,14 @@ public class GameAudio {
 
 	public void softMuteMusic(boolean muted) {
 		currentMusic.setVolume((muted ? .5f : 1) * musics.musicsVolume);
+	}
+
+	public void playFusion() {
+		sounds.play(GameAssets.i.sfxBonus);
+	}
+
+	public void playHeroFusion() {
+		sounds.play(GameAssets.i.sfxBonus);
 	}
 	
 

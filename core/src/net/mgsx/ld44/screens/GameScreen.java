@@ -38,7 +38,7 @@ public class GameScreen extends UIScreen
 		postProcessing.enabled = false;
 		
 		if(DEBUG_GAME_SCENE){
-			directTransition(new CurvesScene(this));
+			directTransition(new CurvesScene(this, 0));
 		}else{
 			directTransition(new TitleScene());
 		}
@@ -49,7 +49,7 @@ public class GameScreen extends UIScreen
 				if(event instanceof BackMenuEvent){
 					directTransition(new MenuScene());
 				}else if(event instanceof NewGameEvent){
-					directTransition(new CurvesScene(GameScreen.this));
+					directTransition(new CurvesScene(GameScreen.this, ((NewGameEvent) event).musicIndex));
 				}else if(event instanceof SceneOverEvent){
 					directTransition((((SceneOverEvent)event).nextScene));
 				}

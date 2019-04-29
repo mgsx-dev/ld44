@@ -77,7 +77,7 @@ public class CurvesScene extends Group implements Scene{
 	private float curveChangeTimeout;
 	private int spawnCurveIndex;
 	
-	public CurvesScene(GameScreen gameScreen) {
+	public CurvesScene(GameScreen gameScreen, int musicIndex) {
 		this.gameScreen = gameScreen;
 		addActor(clockActor = new ClockActor());
 		
@@ -105,7 +105,7 @@ public class CurvesScene extends Group implements Scene{
 		hero.curve = MetaGame.i.game.curves.first();
 		addActor(hero);
 		
-		GameAudio.i.playMusicGame2();
+		GameAudio.i.playMusicGame(musicIndex);
 		
 		addActor(hud = new HUDActor());
 	}
@@ -634,6 +634,8 @@ public class CurvesScene extends Group implements Scene{
 						
 						addScore(GameRules.scoreForFusion(newCoin));
 						
+						GameAudio.i.playFusion();
+						
 						lock(LOCK_FOR_FUSION);
 						
 						hasChanged = true;
@@ -672,6 +674,8 @@ public class CurvesScene extends Group implements Scene{
 			if(GameRules.shouldLockWhenTransform(hero.type)){
 				lock(LOCK_FOR_HERO_TRANSFORM);
 			}
+			
+			GameAudio.i.playHeroFusion();
 			
 			hasChanged = true;
 		}

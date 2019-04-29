@@ -27,15 +27,15 @@ public class TitleScene extends Group implements Scene
 		
 		Skin skin = GameAssets.i.skin;
 		Table root = new Table(skin);
-		root.add("Coin Coin!").row();
-		root.add("Ludum Dare 44").row();
 		TextButton bt;
-		root.add(bt = new TextButton("Let's Jam! :-)", skin));
+		root.add(bt = new TextButton("START", skin)).padBottom(40);
 //		SelectBox<String> box = new SelectBox<String>(skin);
 //		box.setItems("Alpha", "Beta", "Gamma", "Delta");
 //		root.add(box);
 		addActor(root);
 		root.setFillParent(true);
+		
+		AnimUtil.animateButton(bt);
 		
 		bt.addListener(new ChangeListener() {
 			@Override

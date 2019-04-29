@@ -32,7 +32,8 @@ public class GameAssets {
 	public Music musicF;
 
 	public Array<Sound> sfxSplashs = new Array<Sound>();
-
+	public Array<Sound>  sfxCoins = new Array<Sound>();
+	
 	public Sound sfxCoinShort;
 	public Sound sfxCoinLong;
 
@@ -47,6 +48,14 @@ public class GameAssets {
 	public Texture textureTitle;
 
 	public Texture textureTuto;
+
+	public Sound sfxBonus;
+
+	public Sound sfxMalus;
+
+	public Sound sfxCoin3;
+
+	public Sound sfxCoin4;
 	
 	
 	public GameAssets() {
@@ -67,18 +76,26 @@ public class GameAssets {
 		sfxSplash1 = Gdx.audio.newSound(Gdx.files.internal("sfx/crash1.wav"));
 		sfxSplash2 = Gdx.audio.newSound(Gdx.files.internal("sfx/crash2.wav"));
 		sfxSplash3 = Gdx.audio.newSound(Gdx.files.internal("sfx/crash3.wav"));
-		sfxMachine = Gdx.audio.newSound(Gdx.files.internal("sfx/machinesous.wav"));
+		sfxMachine = Gdx.audio.newSound(Gdx.files.internal("sfx/cashmachine.wav"));
 		sfxSplash2 = Gdx.audio.newSound(Gdx.files.internal("sfx/powerup.wav"));
+		sfxBonus = Gdx.audio.newSound(Gdx.files.internal("sfx/bonus.wav"));
+		sfxMalus = Gdx.audio.newSound(Gdx.files.internal("sfx/malus.wav"));
 		
 		sfxCoin = Gdx.audio.newSound(Gdx.files.internal("sfx/piece.wav"));
+		sfxCoin3 = Gdx.audio.newSound(Gdx.files.internal("sfx/piece3.wav"));
+		sfxCoin4 = Gdx.audio.newSound(Gdx.files.internal("sfx/piece4.wav"));
 		sfxCoinShort = Gdx.audio.newSound(Gdx.files.internal("sfx/piece court.wav"));
 		sfxCoinLong = Gdx.audio.newSound(Gdx.files.internal("sfx/piece long.wav"));
+		
+		sfxCoins.add(sfxCoin);
+		sfxCoins.add(sfxCoin3);
+		sfxCoins.add(sfxCoin4);
 		
 		sfxSplashs.add(sfxSplash1);
 		sfxSplashs.add(sfxSplash2);
 		sfxSplashs.add(sfxSplash3);
 		
-		musicIntro = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 intro.mp3"));
+		musicIntro = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track intro.mp3"));
 		musicB = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track B.mp3"));
 		musicD = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.mp3"));
 		musicF = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track F.mp3"));
