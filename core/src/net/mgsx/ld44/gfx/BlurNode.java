@@ -53,24 +53,26 @@ public class BlurNode implements Processor{
 			if(customKernel){
 				
 				float rate = 1;
-				gen += "color += texture2D(u_texture, vec2(tc.x, tc.y)) * " + rate + ";\n";
+				String rateString = shaderUtil.formatFloat(rate);
+				gen += "color += texture2D(u_texture, vec2(tc.x, tc.y)) * " + rateString + ";\n";
 				float total = rate;
 				int n = 8;
 				for(int i=1 ; i<=n ; i++){
 					int dx = i;
 					int dy = i;
 					rate *= .9f;
+					rateString = shaderUtil.formatFloat(rate);
 					total += rate * 1.4f;
-					gen += "color += texture2D(u_texture, vec2(tc.x + dx * " + dx + ".0, tc.y + dy * " + dy + ".0)) * " + rate + ";\n";
-					gen += "color += texture2D(u_texture, vec2(tc.x - dx * " + dx + ".0, tc.y - dy * " + dy + ".0)) * " + rate + ";\n";
+					gen += "color += texture2D(u_texture, vec2(tc.x + dx * " + dx + ".0, tc.y + dy * " + dy + ".0)) * " + rateString + ";\n";
+					gen += "color += texture2D(u_texture, vec2(tc.x - dx * " + dx + ".0, tc.y - dy * " + dy + ".0)) * " + rateString + ";\n";
 				}
-				gen += "color /= " + total + ";";
+				gen += "color /= " + shaderUtil.formatFloat(total) + ";";
 			}else{
 				for(int i=0 ; i<kernel.size ; i++){
 					float rate = kernel.get(i) * 1.5f;
 					float dx = i - (kernel.size-1)/2f;
 					float dy = i - (kernel.size-1)/2f;
-					gen += "color += texture2D(u_texture, vec2(tc.x + dx * " + dx + ", tc.y + dy * " + dy + ")) * " + rate + ";\n";
+					gen += "color += texture2D(u_texture, vec2(tc.x + dx * " + shaderUtil.formatFloat(dx) + ", tc.y + dy * " + shaderUtil.formatFloat(dx) + ")) * " + shaderUtil.formatFloat(rate) + ";\n";
 					
 				}
 				

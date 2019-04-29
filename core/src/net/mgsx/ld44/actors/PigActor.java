@@ -20,7 +20,8 @@ public class PigActor extends Group
 	public PigActor(int type, int level) {
 		this.type = type;
 		this.level = level;
-		body = QuickGdx.image(GameAssets.i.hero, 4 * 64, 0, 64, 64);
+		
+		body = QuickGdx.image(GameAssets.i.hero, 4 * 64, type * 64, 64, 64);
 		addActor(body);
 		body.setPosition(0, 0, Align.center);
 		body.setScale(2);

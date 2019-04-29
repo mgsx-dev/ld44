@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
 import net.mgsx.ld44.assets.GameAssets;
+import net.mgsx.ld44.audio.GameAudio;
 import net.mgsx.ld44.events.NewGameEvent;
 import net.mgsx.ld44.model.MetaGame;
 import net.mgsx.ld44.utils.Scene;
@@ -18,6 +19,8 @@ public class MenuScene extends Table implements Scene
 	public MenuScene() {
 		super(GameAssets.i.skin);
 		setFillParent(true);
+		
+		GameAudio.i.playMusicIntro();
 		
 		Table menu = new Table(getSkin());
 		menu.defaults().pad(30);

@@ -81,7 +81,7 @@ public class GameRules {
 	}
 
 	public static float pigPeriod(CurrencyGame game, HeroActor hero) {
-		return MathUtils.lerp(8, 3, hero.type / 15f);
+		return MathUtils.lerp(5, 1, hero.type / 15f);
 	}
 
 	public static float cashMachinePeriod(CurrencyGame game, HeroActor hero) {
@@ -104,6 +104,30 @@ public class GameRules {
 
 	public static float newTempoBonusSpeed() {
 		return (1 << MathUtils.random(0, 3)) / 2f; // 1 bar or 2 bars
+	}
+
+	public static boolean shouldLockWhenTransform(int type) {
+		return false; // type < 15; // never lock
+	}
+
+	public static float getChangeCurvePeriod(int type) {
+		return MathUtils.lerp(MathUtils.random(3f, 5f), MathUtils.random(1f, 2f), type/15f) ;
+	}
+
+	public static int pigType(HeroActor hero) {
+		return MathUtils.random(2);
+	}
+
+	public static int pigLevel(HeroActor hero) {
+		return hero.type/3 > 2 ? 1 : 0;
+	}
+
+	public static float getCurveAmplitude(HeroActor hero) {
+		return MathUtils.lerp(1.5f, 2, MathUtils.clamp(hero.type/3f, 0, 1)) ;
+	}
+
+	public static float getCurveFrequency(HeroActor hero) {
+		return MathUtils.lerp(1.5f, .1f, hero.type/15f) ;
 	}
 
 }

@@ -48,7 +48,7 @@ public class GameAudio {
 	public void update(float deltaTime) {
 		
 		// XXX
-		sounds.soundMasterVolume = .5f;
+		sounds.soundMasterVolume = 1f;
 		
 		
 		musics.update(deltaTime);
@@ -95,24 +95,7 @@ public class GameAudio {
 		return quantizedPos > lastQuantizedPos;
 	}
 	
-	public void playMusicIntro(){
-		musics.replaceMusics(GameAssets.i.introMusic, true);
-	}
 	
-	public void playJump(){
-		sounds.play(GameAssets.i.sfxJump);
-	}
-
-	public void playGrabCoin(int type) {
-		// TODO type
-		sounds.play(GameAssets.i.sfxCoin1);
-		// sounds.play(GameAssets.i.sfxSplashs.random());
-	}
-	public void playGrabCoinSync(int type, float barPrecision) {
-		scheduledSfx.add(new SfxPlay(GameAssets.i.sfxSplashs.random(), barPrecision));
-		
-	}
-
 	public void playMusicGame(Music music) {
 		lastPosition = 0;
 		currentPosition = 0;
@@ -122,13 +105,23 @@ public class GameAudio {
 	
 	public void playMusicGame1() {
 		bpm = 180;
-		playMusicGame(GameAssets.i.musicB0);
-		midiSequence = null;
+		playMusicGame(GameAssets.i.musicB);
+		midiSequence = new Json().fromJson(MidiSequence.class, Gdx.files.internal("music/midi lead track B.json"));
 	}
 	public void playMusicGame2() {
 		bpm = 148;
-		playMusicGame(GameAssets.i.musicD1);
-		midiSequence = new Json().fromJson(MidiSequence.class, Gdx.files.internal("music/midi lead track D.1.json"));
+		playMusicGame(GameAssets.i.musicD);
+		midiSequence = new Json().fromJson(MidiSequence.class, Gdx.files.internal("music/midi lead track D.json"));
+	}
+	public void playMusicGame3() {
+		bpm = 148;
+		playMusicGame(GameAssets.i.musicF);
+		midiSequence = new Json().fromJson(MidiSequence.class, Gdx.files.internal("music/midi lead track F.json"));
+	}
+	public void playMusicIntro(){
+		bpm = 148; // TODO ?
+		playMusicGame(GameAssets.i.musicIntro);
+		midiSequence = null; // TODO new Json().fromJson(MidiSequence.class, Gdx.files.internal("music/midi lead track F.json"));
 	}
 
 	public float getBarDuration(float barLength) {
@@ -151,6 +144,42 @@ public class GameAudio {
 
 	public float getMusicTime() {
 		return currentPosition;
+	}
+
+	public void playJump(){
+		sounds.play(GameAssets.i.sfxJump);
+	}
+
+	public void playGrabCoin(int type) {
+		// TODO type
+		sounds.play(GameAssets.i.sfxCoinShort);
+		// sounds.play(GameAssets.i.sfxSplashs.random());
+	}
+	public void playGrabCoinSync(int type, float barPrecision) {
+		// scheduledSfx.add(new SfxPlay(GameAssets.i.sfxSplashs.random(), barPrecision));
+		scheduledSfx.add(new SfxPlay(GameAssets.i.sfxCoin, .25f));
+		// sounds.play(GameAssets.i.sfxCoin);
+	}
+	
+	public void playMachine(){
+		sounds.play(GameAssets.i.sfxMachine);
+	}
+
+	public void playPigCollision() {
+		// TODO ?
+		sounds.play(GameAssets.i.sfxCoinLong);
+	}
+
+	public void playCoinRight() {
+		sounds.play(GameAssets.i.sfxCoinShort);
+	}
+
+	public void playCoinLeft() {
+		sounds.play(GameAssets.i.sfxCoinShort);
+	}
+
+	public void softMuteMusic(boolean muted) {
+		currentMusic.setVolume((muted ? .5f : 1) * musics.musicsVolume);
 	}
 	
 

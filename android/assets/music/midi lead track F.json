@@ -1,0 +1,7864 @@
+{
+  "scale": 96,
+  "tracks": [
+    {
+      "events": [
+        {
+          "time": 0,
+          "status": 255,
+          "type": "MIDI::MetaEvent"
+        },
+        {
+          "time": 0,
+          "status": 255,
+          "type": "MIDI::TimeSig"
+        },
+        {
+          "time": 0,
+          "status": 255,
+          "type": "MIDI::TimeSig"
+        },
+        {
+          "time": 24,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 83
+        },
+        {
+          "time": 30,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 72,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 90
+        },
+        {
+          "time": 143,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 168,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 83
+        },
+        {
+          "time": 187,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 216,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 94
+        },
+        {
+          "time": 280,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 312,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 330,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 330,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 100
+        },
+        {
+          "time": 342,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 348,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 360,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 360,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 100
+        },
+        {
+          "time": 372,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 384,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 384,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 384,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 64,
+          "velocity": 26
+        },
+        {
+          "time": 408,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 85
+        },
+        {
+          "time": 432,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 432,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 432,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 434,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 480,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 89
+        },
+        {
+          "time": 480,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 480,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 528,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 528,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 531,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 576,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 78
+        },
+        {
+          "time": 576,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 576,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 600,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 604,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 624,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 624,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 635,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 672,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 672,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 672,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 700,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 720,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 720,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 768,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 768,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 768,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 792,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 85
+        },
+        {
+          "time": 816,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 816,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 816,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 818,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 864,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 89
+        },
+        {
+          "time": 864,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 864,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 912,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 912,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 915,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 960,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 78
+        },
+        {
+          "time": 960,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 960,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 984,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 988,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 1008,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1008,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1019,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 1056,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 1056,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1056,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1084,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 1104,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1104,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1152,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 1152,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1152,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1152,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 66,
+          "velocity": 37
+        },
+        {
+          "time": 1156,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 64,
+          "velocity": 0
+        },
+        {
+          "time": 1176,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 85
+        },
+        {
+          "time": 1200,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 1200,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1200,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1202,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 1248,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 89
+        },
+        {
+          "time": 1248,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1248,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1296,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1296,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1299,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 1344,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 78
+        },
+        {
+          "time": 1344,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1344,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1368,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 1372,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 1392,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1392,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1403,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 1440,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 1440,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1440,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1468,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 1488,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1488,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1536,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 92
+        },
+        {
+          "time": 1536,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1536,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1539,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 66,
+          "velocity": 0
+        },
+        {
+          "time": 1542,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 39
+        },
+        {
+          "time": 1549,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 1584,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1584,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1632,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 1632,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1632,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1645,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 1680,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1680,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1728,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 96
+        },
+        {
+          "time": 1728,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1728,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1748,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 1752,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 1776,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 1776,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1776,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1800,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 1824,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 1824,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 54
+        },
+        {
+          "time": 1824,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1824,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1862,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 1872,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1872,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1920,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 1920,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1920,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1920,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 64,
+          "velocity": 100
+        },
+        {
+          "time": 1922,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 1944,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 1968,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 1968,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 1968,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 1970,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2016,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 53
+        },
+        {
+          "time": 2016,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2016,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2064,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2064,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2067,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2112,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 2112,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2112,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2136,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 2140,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2160,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2160,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2171,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 2208,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 2208,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2208,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2236,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 2256,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2256,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2304,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 2304,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2304,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2304,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 64,
+          "velocity": 64
+        },
+        {
+          "time": 2305,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 62,
+          "velocity": 24
+        },
+        {
+          "time": 2328,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 2352,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 2352,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2352,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2354,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2400,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 53
+        },
+        {
+          "time": 2400,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2400,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2448,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2448,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2451,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2496,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 2496,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2496,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2520,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 2524,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2544,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2544,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2555,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 2592,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 2592,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2592,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2620,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 2640,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2687,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 64,
+          "velocity": 27
+        },
+        {
+          "time": 2688,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 2688,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2688,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2697,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 62,
+          "velocity": 0
+        },
+        {
+          "time": 2712,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 2736,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 2736,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2738,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2784,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 53
+        },
+        {
+          "time": 2784,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2784,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2832,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2832,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2835,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2880,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 2880,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2880,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2904,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 2908,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 2928,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2928,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 2939,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 2976,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 2976,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 2976,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3004,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3024,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3024,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3072,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 92
+        },
+        {
+          "time": 3072,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3072,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3085,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3120,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 3120,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3120,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3144,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 3144,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 3157,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3168,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3168,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3192,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 93
+        },
+        {
+          "time": 3213,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3216,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3216,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3240,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 96
+        },
+        {
+          "time": 3260,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3264,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 43
+        },
+        {
+          "time": 3264,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3264,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3297,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 3312,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3408,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3432,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 54
+        },
+        {
+          "time": 3456,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 3456,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3456,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3462,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 38
+        },
+        {
+          "time": 3466,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 64,
+          "velocity": 0
+        },
+        {
+          "time": 3470,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 3480,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 3504,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 3504,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3504,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3506,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 3552,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 53
+        },
+        {
+          "time": 3552,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3552,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3600,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3600,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3603,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 3648,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 3648,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3648,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3663,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 63,
+          "velocity": 38
+        },
+        {
+          "time": 3672,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 3674,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 3676,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 3696,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3696,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3707,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3744,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 3744,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3744,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3772,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 3792,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3792,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3840,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 3840,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3840,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3852,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3852,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3864,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3864,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 24
+        },
+        {
+          "time": 3876,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 3876,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3888,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 3888,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3888,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3900,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3900,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3912,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3912,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3924,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3924,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 48
+        },
+        {
+          "time": 3936,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 3936,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 53
+        },
+        {
+          "time": 3936,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3984,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 3984,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 3987,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4032,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 4032,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4032,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4037,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 46
+        },
+        {
+          "time": 4038,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 63,
+          "velocity": 0
+        },
+        {
+          "time": 4056,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 4060,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4080,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4080,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4087,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 63,
+          "velocity": 83
+        },
+        {
+          "time": 4091,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4094,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 4128,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 4128,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4128,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4156,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4176,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4176,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4224,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 4224,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4224,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4247,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 63,
+          "velocity": 0
+        },
+        {
+          "time": 4248,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 4272,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 4272,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4272,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4274,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4320,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 53
+        },
+        {
+          "time": 4320,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4320,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4320,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 65,
+          "velocity": 58
+        },
+        {
+          "time": 4368,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4368,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4371,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4416,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 4416,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4416,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4440,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 4444,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4464,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4464,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4475,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4512,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 4512,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4512,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4540,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4560,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4560,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4608,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 92
+        },
+        {
+          "time": 4608,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4608,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4621,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 77
+        },
+        {
+          "time": 4656,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4656,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4665,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4704,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 4704,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4704,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4717,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 93
+        },
+        {
+          "time": 4752,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4752,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4757,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4800,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 96
+        },
+        {
+          "time": 4800,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4800,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4820,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 4832,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 73
+        },
+        {
+          "time": 4848,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4848,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4865,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4896,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 91
+        },
+        {
+          "time": 4896,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4896,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4934,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 4944,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4944,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4992,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 4992,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 4992,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 60,
+          "velocity": 100
+        },
+        {
+          "time": 4992,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 87
+        },
+        {
+          "time": 5021,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5023,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 65,
+          "velocity": 0
+        },
+        {
+          "time": 5040,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5040,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5088,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5088,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5136,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 68
+        },
+        {
+          "time": 5136,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5136,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5173,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 5184,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 75
+        },
+        {
+          "time": 5184,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5184,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5215,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5232,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 5232,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5232,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5256,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5256,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 5280,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 5280,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5280,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5304,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 5328,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 5328,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 5328,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5328,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5352,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 5352,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 100
+        },
+        {
+          "time": 5376,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 5376,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5376,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5376,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 60,
+          "velocity": 64
+        },
+        {
+          "time": 5376,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 74,
+          "velocity": 100
+        },
+        {
+          "time": 5376,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 87
+        },
+        {
+          "time": 5400,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 68
+        },
+        {
+          "time": 5400,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 72,
+          "velocity": 100
+        },
+        {
+          "time": 5400,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 74,
+          "velocity": 64
+        },
+        {
+          "time": 5405,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5424,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5424,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5424,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 70,
+          "velocity": 100
+        },
+        {
+          "time": 5424,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 72,
+          "velocity": 64
+        },
+        {
+          "time": 5437,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 5448,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 67,
+          "velocity": 100
+        },
+        {
+          "time": 5448,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 70,
+          "velocity": 64
+        },
+        {
+          "time": 5472,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 90
+        },
+        {
+          "time": 5472,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5472,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5472,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 67,
+          "velocity": 64
+        },
+        {
+          "time": 5472,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 100
+        },
+        {
+          "time": 5496,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 82
+        },
+        {
+          "time": 5496,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 64
+        },
+        {
+          "time": 5496,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 70,
+          "velocity": 100
+        },
+        {
+          "time": 5520,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5520,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5520,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 70,
+          "velocity": 64
+        },
+        {
+          "time": 5520,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 100
+        },
+        {
+          "time": 5522,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5528,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 5544,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 64
+        },
+        {
+          "time": 5544,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 72,
+          "velocity": 100
+        },
+        {
+          "time": 5568,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 75
+        },
+        {
+          "time": 5568,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5568,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5568,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 72,
+          "velocity": 64
+        },
+        {
+          "time": 5568,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 74,
+          "velocity": 100
+        },
+        {
+          "time": 5592,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 74,
+          "velocity": 64
+        },
+        {
+          "time": 5592,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 75,
+          "velocity": 100
+        },
+        {
+          "time": 5599,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5616,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 5616,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5616,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5616,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 75,
+          "velocity": 64
+        },
+        {
+          "time": 5616,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 77,
+          "velocity": 100
+        },
+        {
+          "time": 5640,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 5640,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 77,
+          "velocity": 64
+        },
+        {
+          "time": 5640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 79,
+          "velocity": 100
+        },
+        {
+          "time": 5664,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 5664,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5664,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5664,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 79,
+          "velocity": 64
+        },
+        {
+          "time": 5664,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 81,
+          "velocity": 100
+        },
+        {
+          "time": 5688,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 5688,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 81,
+          "velocity": 64
+        },
+        {
+          "time": 5688,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 82,
+          "velocity": 100
+        },
+        {
+          "time": 5712,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 5712,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 5712,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5712,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5712,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 82,
+          "velocity": 64
+        },
+        {
+          "time": 5712,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 83,
+          "velocity": 100
+        },
+        {
+          "time": 5736,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 5736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 100
+        },
+        {
+          "time": 5736,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 83,
+          "velocity": 64
+        },
+        {
+          "time": 5736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 84,
+          "velocity": 100
+        },
+        {
+          "time": 5760,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 86
+        },
+        {
+          "time": 5760,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 5760,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5760,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5760,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 84,
+          "velocity": 64
+        },
+        {
+          "time": 5788,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5808,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5808,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5856,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 49
+        },
+        {
+          "time": 5856,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5856,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5856,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 100
+        },
+        {
+          "time": 5880,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 5886,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 5904,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5904,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5905,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 5952,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 81
+        },
+        {
+          "time": 5952,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 5952,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 5952,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 64
+        },
+        {
+          "time": 5952,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 73
+        },
+        {
+          "time": 5987,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6000,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6000,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6026,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 6048,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 46
+        },
+        {
+          "time": 6048,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6048,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6048,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 69
+        },
+        {
+          "time": 6072,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 74
+        },
+        {
+          "time": 6074,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 6096,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6096,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6097,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6127,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 6144,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 6144,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6144,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6144,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 56
+        },
+        {
+          "time": 6173,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6192,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6192,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6219,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 6240,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 43
+        },
+        {
+          "time": 6240,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6240,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6240,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 69
+        },
+        {
+          "time": 6264,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 6268,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 6288,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6288,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6291,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6324,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 6336,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6336,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6336,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 63
+        },
+        {
+          "time": 6336,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 77
+        },
+        {
+          "time": 6364,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6384,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6384,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6410,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 6432,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 50
+        },
+        {
+          "time": 6432,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6432,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6432,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 72
+        },
+        {
+          "time": 6456,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 79
+        },
+        {
+          "time": 6459,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 6480,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6480,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6482,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6528,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 6528,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6528,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6528,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 86
+        },
+        {
+          "time": 6559,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6576,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6576,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6576,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 6598,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 6624,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6624,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6624,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 74
+        },
+        {
+          "time": 6626,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 47
+        },
+        {
+          "time": 6648,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 77
+        },
+        {
+          "time": 6657,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 6672,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6672,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6675,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6701,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 6720,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 75
+        },
+        {
+          "time": 6720,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6720,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6720,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 80
+        },
+        {
+          "time": 6749,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6768,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6768,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6793,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 6816,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 42
+        },
+        {
+          "time": 6816,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6816,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6816,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 72
+        },
+        {
+          "time": 6841,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 65
+        },
+        {
+          "time": 6845,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 6864,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6864,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6866,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6884,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 6912,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 80
+        },
+        {
+          "time": 6912,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6912,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6912,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 71
+        },
+        {
+          "time": 6944,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 6960,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 6960,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 6984,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 7008,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7008,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7008,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 77
+        },
+        {
+          "time": 7008,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 52
+        },
+        {
+          "time": 7032,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 7037,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 7056,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7056,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7057,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7082,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 7104,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 7104,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7104,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7104,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 72
+        },
+        {
+          "time": 7132,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7152,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7152,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7167,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 7200,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 45
+        },
+        {
+          "time": 7200,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7200,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7200,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 69,
+          "velocity": 69
+        },
+        {
+          "time": 7224,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 79
+        },
+        {
+          "time": 7230,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 7248,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7248,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7250,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 69,
+          "velocity": 0
+        },
+        {
+          "time": 7250,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7296,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 7296,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7296,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7296,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 89
+        },
+        {
+          "time": 7325,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7344,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7344,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7374,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 7392,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 52
+        },
+        {
+          "time": 7392,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7392,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7392,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 75
+        },
+        {
+          "time": 7416,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 76
+        },
+        {
+          "time": 7422,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 7440,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7440,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7443,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7468,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 7488,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 84
+        },
+        {
+          "time": 7488,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7488,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7488,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 77
+        },
+        {
+          "time": 7520,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7536,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7536,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7558,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 7583,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 38
+        },
+        {
+          "time": 7584,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7584,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7584,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 75
+        },
+        {
+          "time": 7608,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 71
+        },
+        {
+          "time": 7615,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 7632,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7632,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7635,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7640,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 7680,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 7680,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7680,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7680,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 71,
+          "velocity": 93
+        },
+        {
+          "time": 7713,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7728,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7728,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7744,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 71,
+          "velocity": 0
+        },
+        {
+          "time": 7776,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 47
+        },
+        {
+          "time": 7776,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7776,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7776,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 76,
+          "velocity": 77
+        },
+        {
+          "time": 7800,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 70
+        },
+        {
+          "time": 7806,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 7824,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7824,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7826,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7848,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 76,
+          "velocity": 0
+        },
+        {
+          "time": 7872,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 7872,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7872,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7872,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 73,
+          "velocity": 77
+        },
+        {
+          "time": 7902,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 7920,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7920,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7944,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 73,
+          "velocity": 0
+        },
+        {
+          "time": 7968,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 55
+        },
+        {
+          "time": 7968,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 7968,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 7968,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 73,
+          "velocity": 74
+        },
+        {
+          "time": 7992,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 73
+        },
+        {
+          "time": 7999,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8016,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8016,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8020,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8040,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 73,
+          "velocity": 0
+        },
+        {
+          "time": 8064,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 8064,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8064,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8064,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 73,
+          "velocity": 87
+        },
+        {
+          "time": 8096,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8112,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8112,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8139,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 73,
+          "velocity": 0
+        },
+        {
+          "time": 8160,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 62
+        },
+        {
+          "time": 8160,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8160,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8160,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 73,
+          "velocity": 71
+        },
+        {
+          "time": 8184,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 8191,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8208,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8208,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8210,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8228,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 73,
+          "velocity": 0
+        },
+        {
+          "time": 8256,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 79
+        },
+        {
+          "time": 8256,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8256,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8256,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 73,
+          "velocity": 75
+        },
+        {
+          "time": 8288,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8304,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8304,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8328,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 73,
+          "velocity": 0
+        },
+        {
+          "time": 8352,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 64
+        },
+        {
+          "time": 8352,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8352,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8352,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 66,
+          "velocity": 70
+        },
+        {
+          "time": 8376,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 8381,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8400,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8400,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8400,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8410,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 66,
+          "velocity": 0
+        },
+        {
+          "time": 8448,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 8448,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8448,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8448,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 66,
+          "velocity": 79
+        },
+        {
+          "time": 8475,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8496,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8496,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8517,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 66,
+          "velocity": 0
+        },
+        {
+          "time": 8544,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 8544,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8544,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8544,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 66,
+          "velocity": 68
+        },
+        {
+          "time": 8568,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 76
+        },
+        {
+          "time": 8572,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8592,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8592,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8610,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 66,
+          "velocity": 0
+        },
+        {
+          "time": 8612,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 8640,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8640,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 66,
+          "velocity": 75
+        },
+        {
+          "time": 8664,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 82
+        },
+        {
+          "time": 8667,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8688,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8688,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8699,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 66,
+          "velocity": 0
+        },
+        {
+          "time": 8719,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 90
+        },
+        {
+          "time": 8736,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8736,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 66,
+          "velocity": 69
+        },
+        {
+          "time": 8760,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 86
+        },
+        {
+          "time": 8764,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8784,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8784,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8795,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 66,
+          "velocity": 0
+        },
+        {
+          "time": 8798,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8832,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 86
+        },
+        {
+          "time": 8832,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8832,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8832,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 79
+        },
+        {
+          "time": 8859,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8880,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8880,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8898,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 8928,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 84
+        },
+        {
+          "time": 8928,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8928,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8928,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 67
+        },
+        {
+          "time": 8952,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 77
+        },
+        {
+          "time": 8956,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 8976,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 8976,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 8990,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 8999,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9024,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 9024,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9024,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9024,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 68
+        },
+        {
+          "time": 9057,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9072,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9072,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9099,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9120,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 86
+        },
+        {
+          "time": 9120,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9120,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9120,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 67
+        },
+        {
+          "time": 9144,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 71
+        },
+        {
+          "time": 9144,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9168,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9168,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9187,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 9194,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9216,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 87
+        },
+        {
+          "time": 9216,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9216,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9216,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 63
+        },
+        {
+          "time": 9244,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9264,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9264,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9289,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9311,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 59
+        },
+        {
+          "time": 9312,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9312,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9312,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 59
+        },
+        {
+          "time": 9336,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 87
+        },
+        {
+          "time": 9342,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 9360,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9360,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9361,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9391,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9408,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 84
+        },
+        {
+          "time": 9408,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9408,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9408,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 67
+        },
+        {
+          "time": 9442,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9456,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9456,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9482,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9504,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 61
+        },
+        {
+          "time": 9504,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9504,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9504,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 59,
+          "velocity": 70
+        },
+        {
+          "time": 9528,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 75
+        },
+        {
+          "time": 9534,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 9552,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9552,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9559,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9564,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 59,
+          "velocity": 0
+        },
+        {
+          "time": 9600,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 78
+        },
+        {
+          "time": 9600,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9600,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9600,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 66
+        },
+        {
+          "time": 9636,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9648,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9648,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9676,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 9696,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 63
+        },
+        {
+          "time": 9696,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9696,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9696,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 61
+        },
+        {
+          "time": 9720,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 9729,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 9744,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9744,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9750,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9770,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 9792,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 79
+        },
+        {
+          "time": 9792,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9792,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9792,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 66
+        },
+        {
+          "time": 9840,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9840,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9841,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9873,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 9888,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 62
+        },
+        {
+          "time": 9888,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9888,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9888,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 64
+        },
+        {
+          "time": 9912,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 85
+        },
+        {
+          "time": 9917,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 9936,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9936,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 9940,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 9964,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 9984,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 9984,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 9984,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10032,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10032,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10032,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 65
+        },
+        {
+          "time": 10034,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 10080,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 61
+        },
+        {
+          "time": 10080,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10080,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10080,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10080,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 56
+        },
+        {
+          "time": 10104,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 82
+        },
+        {
+          "time": 10113,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 10128,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10128,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10133,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 10154,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10176,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 83
+        },
+        {
+          "time": 10176,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10176,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10176,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 60
+        },
+        {
+          "time": 10219,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 0
+        },
+        {
+          "time": 10224,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10224,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10242,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10272,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 63
+        },
+        {
+          "time": 10272,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10272,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10272,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 73
+        },
+        {
+          "time": 10303,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 10320,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10320,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10368,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10368,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10368,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10368,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 55
+        },
+        {
+          "time": 10416,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10416,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10443,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10464,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 97
+        },
+        {
+          "time": 10464,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10464,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10464,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 40
+        },
+        {
+          "time": 10495,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 10512,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10512,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10545,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10560,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10560,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10560,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 52
+        },
+        {
+          "time": 10608,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10608,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10632,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10656,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 85
+        },
+        {
+          "time": 10656,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10656,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10656,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 61,
+          "velocity": 45
+        },
+        {
+          "time": 10704,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10704,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10708,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 10746,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 61,
+          "velocity": 0
+        },
+        {
+          "time": 10752,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10752,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10752,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 63,
+          "velocity": 72
+        },
+        {
+          "time": 10800,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10800,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10820,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 63,
+          "velocity": 0
+        },
+        {
+          "time": 10848,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10848,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10848,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 63,
+          "velocity": 58
+        },
+        {
+          "time": 10848,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 91
+        },
+        {
+          "time": 10896,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 10896,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10896,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10897,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 10915,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 63,
+          "velocity": 0
+        },
+        {
+          "time": 10920,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 10944,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 10944,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10944,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 10944,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 68,
+          "velocity": 61
+        },
+        {
+          "time": 10968,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 10992,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 10992,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 11002,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 68,
+          "velocity": 0
+        },
+        {
+          "time": 11016,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 11040,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 11040,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 52,
+          "velocity": 100
+        },
+        {
+          "time": 11040,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 54,
+          "velocity": 90
+        },
+        {
+          "time": 11040,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 11040,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 11040,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 63,
+          "velocity": 68
+        },
+        {
+          "time": 11064,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 52,
+          "velocity": 64
+        },
+        {
+          "time": 11068,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 54,
+          "velocity": 0
+        },
+        {
+          "time": 11088,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        },
+        {
+          "time": 11088,
+          "status": 144,
+          "type": "MIDI::NoteOn",
+          "channel": 0,
+          "note": 57,
+          "velocity": 100
+        },
+        {
+          "time": 11118,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 63,
+          "velocity": 0
+        },
+        {
+          "time": 11136,
+          "status": 128,
+          "type": "MIDI::NoteOff",
+          "channel": 0,
+          "note": 57,
+          "velocity": 64
+        }
+      ]
+    }
+  ]
+}

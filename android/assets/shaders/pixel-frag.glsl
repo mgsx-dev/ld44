@@ -9,6 +9,8 @@ varying vec2 v_texCoords;
 uniform sampler2D u_texture;
 uniform vec2 u_scale;
 
+#HEADER
+
 void main() {
     vec2 tc = v_texCoords;
 

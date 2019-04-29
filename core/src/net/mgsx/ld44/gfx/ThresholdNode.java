@@ -37,7 +37,9 @@ public class ThresholdNode implements Processor{
 		if(blurShader == null){
 			String fragSource = Gdx.files.internal("shaders/pixel-frag.glsl").readString();
 			
-			String[] ss = fragSource.split("#START"); // TODO !!!!!!!!!!!!!!!!!!!
+			String[] hb = fragSource.split("#HEADER");
+			
+			String[] ss = hb[1].split("#START"); // TODO !!!!!!!!!!!!!!!!!!!
 			String[] sss = ss[1].split("#END");
 			
 			String gen = "";
@@ -52,7 +54,7 @@ public class ThresholdNode implements Processor{
 			
 			String pre = "uniform float u_threshold;\n";
 			
-			fragSource = pre + ss[0] + gen + sss[1];
+			fragSource = hb[0] + pre + ss[0] + gen + sss[1];
 			
 			blurShader = new ShaderProgram(Gdx.files.internal("shaders/simple-vert.glsl").readString(), 
 					fragSource);

@@ -17,8 +17,6 @@ public class GameAssets {
 
 	public Skin skin;
 
-	public Music introMusic;
-
 	public Sound sfxJump;
 
 	public Texture hero;
@@ -29,16 +27,22 @@ public class GameAssets {
 	public Sound sfxSplash2;
 	public Sound sfxSplash3;
 	
-	public Music musicB0;
-	public Music musicD0;
-	public Music musicD1;
+	public Music musicB;
+	public Music musicD;
+	public Music musicF;
 
 	public Array<Sound> sfxSplashs = new Array<Sound>();
 
-	public Sound sfxCoin1;
-	public Sound sfxCoin2;
+	public Sound sfxCoinShort;
+	public Sound sfxCoinLong;
 
 	public Texture grid1;
+
+	public Music musicIntro;
+
+	public Sound sfxMachine;
+
+	public Sound sfxCoin;
 	
 	
 	public GameAssets() {
@@ -59,18 +63,21 @@ public class GameAssets {
 		sfxSplash1 = Gdx.audio.newSound(Gdx.files.internal("sfx/crash1.wav"));
 		sfxSplash2 = Gdx.audio.newSound(Gdx.files.internal("sfx/crash2.wav"));
 		sfxSplash3 = Gdx.audio.newSound(Gdx.files.internal("sfx/crash3.wav"));
+		sfxMachine = Gdx.audio.newSound(Gdx.files.internal("sfx/machinesous.wav"));
+		sfxSplash2 = Gdx.audio.newSound(Gdx.files.internal("sfx/powerup.wav"));
 		
-		sfxCoin1 = Gdx.audio.newSound(Gdx.files.internal("sfx/piece1 court.wav"));
-		sfxCoin2 = Gdx.audio.newSound(Gdx.files.internal("sfx/piece1 long.wav"));
-		
+		sfxCoin = Gdx.audio.newSound(Gdx.files.internal("sfx/piece.wav"));
+		sfxCoinShort = Gdx.audio.newSound(Gdx.files.internal("sfx/piece court.wav"));
+		sfxCoinLong = Gdx.audio.newSound(Gdx.files.internal("sfx/piece long.wav"));
 		
 		sfxSplashs.add(sfxSplash1);
 		sfxSplashs.add(sfxSplash2);
 		sfxSplashs.add(sfxSplash3);
 		
-		musicB0 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track B.0.mp3"));
-		musicD0 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.0.mp3"));
-		musicD1 = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.1.mp3"));
+		musicIntro = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 intro.mp3"));
+		musicB = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track B.mp3"));
+		musicD = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track D.mp3"));
+		musicF = Gdx.audio.newMusic(Gdx.files.internal("music/LD44 track F.mp3"));
 		
 		grid1 = new Texture("grid1.png");
 		grid1.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);

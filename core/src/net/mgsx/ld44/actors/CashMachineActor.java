@@ -91,6 +91,8 @@ public class CashMachineActor extends Group
 		
 		scene.addScore(GameRules.scoreForCasino(r));
 		
+		GameAudio.i.softMuteMusic(true);
+		
 		//body.setPosition(0, 0, Align.center);
 		body.addAction(Actions.sequence(
 				Actions.scaleTo(1, 1, 1f, Interpolation.sine), 
@@ -149,6 +151,7 @@ public class CashMachineActor extends Group
 						col2.setVisible(false);
 						col3.setVisible(false);
 					
+						GameAudio.i.softMuteMusic(false);
 					}
 				}),
 				

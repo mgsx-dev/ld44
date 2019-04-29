@@ -74,7 +74,8 @@ public class CurvesScene extends Group implements Scene{
 	private float cachMachineTime = 0;
 	private float pigTime = 0;
 	
-	// TODO plae and check bonus and other entities ...
+	private float curveChangeTimeout;
+	private int spawnCurveIndex;
 	
 	public CurvesScene(GameScreen gameScreen) {
 		this.gameScreen = gameScreen;
@@ -109,7 +110,6 @@ public class CurvesScene extends Group implements Scene{
 		addActor(hud = new HUDActor());
 	}
 	
-	// TODO when gen points : f (time) + last points position
 	private void genPoint() {
 		
 		for(CurrencyCurve c : MetaGame.i.game.curves){
@@ -164,6 +164,15 @@ public class CurvesScene extends Group implements Scene{
 	@Override
 	public void act(float delta) {
 		
+		curveAmplitude = GameRules.getCurveAmplitude(hero);
+		curveFrequency = GameRules.getCurveFrequency(hero);
+		
+		curveChangeTimeout -= delta;
+		if(curveChangeTimeout < 0){
+			curveChangeTimeout = GameRules.getChangeCurvePeriod(hero.type);
+			spawnCurveIndex = MathUtils.random(2);
+		}
+		
 		hud.toFront();
 		
 		MetaGame.i.game.update(delta);
@@ -209,14 +218,6 @@ public class CurvesScene extends Group implements Scene{
 		
 		worldSpeed = 500 + hero.type * 10;
 		
-		// TODO Spawn bonus logic
-//		if(GameAudio.i.isJustBar(4)){
-//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(0f)));
-//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(.5f)));
-//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(1)));
-//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(1.5f)));
-//			spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getNextBarDelay(2f)));
-//		}
 		
 		Camera cam = getStage().getCamera();
 		
@@ -228,6 +229,11 @@ public class CurvesScene extends Group implements Scene{
 			
 			// change every 10s
 			boolean newMode = MathUtils.sin(GameAudio.i.getMusicTime() * MathUtils.PI / CHANGE_MIDI_NOMIDI_PERIOD) > 0;
+			
+			newMode = true; // XXX fore midi only
+//			cachMachineTime = 0; // XXX
+//			pigTime = 0; // XXX
+			
 			if(newMode && !midiMode){
 				noMidiSpeed = GameRules.newTempoBonusSpeed();
 				noMidiBonusType = GameRules.randomCoinTypeFor(hero.type);
@@ -254,10 +260,10 @@ public class CurvesScene extends Group implements Scene{
 				// choose between pig, cash or bonus :
 				if(cachMachineTime > GameRules.cashMachinePeriod(MetaGame.i.game, hero)){
 					cachMachineTime = 0;
-					spawnMachine(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+					spawnMachine(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)));
 				}else if(pigTime > GameRules.pigPeriod(MetaGame.i.game, hero)){
 					pigTime = 0;
-					spawnPig(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+					spawnPig(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)));
 				}else{
 					spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
 				}
@@ -312,7 +318,8 @@ public class CurvesScene extends Group implements Scene{
 			cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
 			
 			// XXX cam zoom debug
-			float expectedoom = MathUtils.lerp(2f, 1f, hero.type / 15f);
+			float t = hero.type / 15f;
+			float expectedoom = MathUtils.lerp(2f, 1f, t*t*t );
 			((OrthographicCamera)cam).zoom = MathUtils.lerp(((OrthographicCamera)cam).zoom, expectedoom, delta * .5f);
 			
 			while(hero.coins.size > MAX_QUEUE){
@@ -341,12 +348,14 @@ public class CurvesScene extends Group implements Scene{
 				if(hero.coins.size > 0){
 					hero.coins.add(hero.coins.removeIndex(0));
 					updateHeroTail(this, hero);
+					GameAudio.i.playCoinRight();
 				}
 			}
 			else if(UniControl.isJustPressed(UniControl.LEFT)){
 				if(hero.coins.size > 0){
 					hero.coins.insert(0, hero.coins.pop());
 					updateHeroTail(this, hero);
+					GameAudio.i.playCoinLeft();
 				}
 			}
 			
@@ -435,6 +444,8 @@ public class CurvesScene extends Group implements Scene{
 							lock(PIG_COLLISION_BAR);
 							updateHeroTail(this, hero);
 							
+							GameAudio.i.playPigCollision();
+							
 							hero.setOrigin(Align.center);
 							hero.addAction(
 									Actions.sequence(
@@ -448,6 +459,8 @@ public class CurvesScene extends Group implements Scene{
 						if(point.set(mob.centerX() - hx, mob.centerY() - hy).len() < mob.radius + 32){ // tODO radius
 							
 							mob.alive = false;
+							
+							GameAudio.i.playMachine();
 							
 							// lock all 
 							lock(-1); // TODO infinite
@@ -508,7 +521,7 @@ public class CurvesScene extends Group implements Scene{
 	public void spawnBonus(float curveTime, Integer type) {
 		// TODO not specially hero curve
 		
-		hero.curve.getPosition(point, curveTime);
+		MetaGame.i.game.curves.get(spawnCurveIndex).getPosition(point, curveTime);
 		
 		if(type == null){
 			type = GameRules.randomCoinTypeFor(hero.type);
@@ -533,12 +546,11 @@ public class CurvesScene extends Group implements Scene{
 		
 		entities.add(coinActor);
 	}
-	public void spawnPig(float curveTime, Integer type) {
+	public void spawnPig(float curveTime) {
 		
 		hero.curve.getPosition(point, curveTime);
 		
-		// TODO type and level
-		PigActor a = new PigActor(0, 0); 
+		PigActor a = new PigActor(GameRules.pigType(hero), GameRules.pigLevel(hero)); 
 		
 		
 		// spawn actor with rythm
@@ -555,7 +567,7 @@ public class CurvesScene extends Group implements Scene{
 		
 		entities.add(a);
 	}
-	public void spawnMachine(float curveTime, Integer type) {
+	public void spawnMachine(float curveTime) {
 		
 		hero.curve.getPosition(point, curveTime);
 		
@@ -579,16 +591,6 @@ public class CurvesScene extends Group implements Scene{
 
 	private Action syncAction(float barPrecision) {
 		return Actions.delay(GameAudio.i.getNextBarTimeRemain(barPrecision));
-	}
-
-	private void genBonus() {
-		hero.curve.getPosition(point, heroCurveTime + GameAudio.i.getBarDuration(4) / stepSize);
-		CoinActor coinActor = new CoinActor(MathUtils.random(2));
-		addActor(coinActor);
-		coinActor.setPosition(point.x, point.y + 1 * 32f);
-		
-		entities.add(coinActor);
-
 	}
 
 	public void updateHeroTail(Group container, HeroActor hero)
@@ -667,7 +669,9 @@ public class CurvesScene extends Group implements Scene{
 					Actions.scaleTo(3, 3, .5f),
 					Actions.scaleTo(1, 1, 1f, Interpolation.elasticOut)));
 			
-			lock(LOCK_FOR_HERO_TRANSFORM);
+			if(GameRules.shouldLockWhenTransform(hero.type)){
+				lock(LOCK_FOR_HERO_TRANSFORM);
+			}
 			
 			hasChanged = true;
 		}
