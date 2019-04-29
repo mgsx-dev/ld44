@@ -19,6 +19,7 @@ public class CashMachineActor extends Group
 	private Image body;
 	public int radius;
 	public boolean used = false;
+	public boolean alive = true;
 
 	public CashMachineActor() {
 		body = QuickGdx.image(GameAssets.i.hero, 10 * 64, 7 * 64, 64, 64);
@@ -49,21 +50,20 @@ public class CashMachineActor extends Group
 	public void playCasino(final CurvesScene scene, HeroActor hero, Action endAction) {
 		if(used) return;
 		used = true;
-		
 		float delay = 0;
 		for(CoinActor coin : hero.coins){
+			coin.toFront();
 			coin.head = null;
 			coin.addAction(Actions.sequence(
 					Actions.delay(delay),
-					Actions.moveTo((getX() + coin.getX())/2, (getY() + coin.getY())/2 + 128, .3f, Interpolation.pow2),
-					Actions.moveTo(getX(), getY(), .3f, Interpolation.pow2InInverse),
+					Actions.moveTo((getX() + coin.getX())/2, (getY() + coin.getY())/2 + 228, .3f, Interpolation.pow2),
+					Actions.moveTo(getX() + 128, getY() + 128, .3f, Interpolation.pow2InInverse),
 					Actions.removeActor()
 					));
 			delay += .2f;
 		}
 		hero.tail = hero;
 		hero.coins.clear();
-		
 		
 		
 		body.remove();

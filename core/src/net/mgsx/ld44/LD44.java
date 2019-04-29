@@ -6,6 +6,7 @@ import com.badlogic.gdx.Input;
 
 import net.mgsx.ld44.assets.GameAssets;
 import net.mgsx.ld44.audio.GameAudio;
+import net.mgsx.ld44.model.MetaGame;
 import net.mgsx.ld44.screens.GameScreen;
 
 public class LD44 extends Game {
@@ -18,6 +19,8 @@ public class LD44 extends Game {
 	
 	@Override
 	public void create () {
+		
+		MetaGame.i.load();
 		
 		GameAssets.i = new GameAssets();
 		GameAssets.i.finish();

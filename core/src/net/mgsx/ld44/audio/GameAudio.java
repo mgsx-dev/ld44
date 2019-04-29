@@ -148,6 +148,10 @@ public class GameAudio {
 	public float getTimeNomalized(float barPrecision) {
 		return (currentPosition * (bpm/60f) / barPrecision) % 1f;
 	}
+
+	public float getMusicTime() {
+		return currentPosition;
+	}
 	
 
 

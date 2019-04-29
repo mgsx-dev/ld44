@@ -51,9 +51,9 @@ public class ClockActor extends Group
 	
 	@Override
 	public void act(float delta) {
-		MetaGame.i.game.time += delta;
-		
 		int value = MathUtils.ceil((MetaGame.i.game.totalTime - MetaGame.i.game.time)*100*4);
+		value = Math.max(value, 0);
+		
 		int h1 = (value/100)/60;
 		int m1 = (value/100)%60;
 		int s1 = value%100;
@@ -66,8 +66,10 @@ public class ClockActor extends Group
 		hours.getColor().a = 1f;
 		minutes.getColor().a = 1f;
 		center.getColor().a = 1f;
-		label.getColor().a = 1f;
+		label.getColor().a = .5f;
 		setScale(2);
+		
+		label.setPosition(0, 250, Align.center);
 		
 		setScale(1f);
 		setPosition(getStage().getCamera().position.x + 600, getStage().getCamera().position.y);
@@ -75,7 +77,7 @@ public class ClockActor extends Group
 		hours.setOrigin(32, 32);
 		minutes.setOrigin(32, 32);
 		
-		hours.setSize(150, 64);
+		hours.setSize(100, 64);
 		minutes.setSize(150, 64);
 		
 		float baseSize = 128;
@@ -89,7 +91,7 @@ public class ClockActor extends Group
 		}
 		
 		if(GameAudio.i.lastEvents.size > 0){
-			center.setSize(baseSize * boomSize, baseSize * boomSize);
+			center.setSize(baseSize * boomSize / 3f, baseSize * boomSize / 3f);
 			
 		}
 		if(GameAudio.i.isJustBar(1, 0)){
@@ -102,14 +104,16 @@ public class ClockActor extends Group
 		hours.setPosition(-32, -32);
 		minutes.setPosition(-32, -32);
 		
+		float timerate = MetaGame.i.game.time / MetaGame.i.game.totalTime;
+		timerate = MathUtils.clamp(timerate, 0, 1);
 		
-		float dateTime = (MetaGame.i.game.time / MetaGame.i.game.totalTime) * 12; // 10 minute : 12h
+		float dateTime = (timerate) * 12; // 10 minute : 12h
 		
 		float h = dateTime / 12f;
 		float m = dateTime % 12f;
 		
-		hours.setRotation(-360 * h);
-		minutes.setRotation(-360 * m);
+		hours.setRotation(-360 * h + 90);
+		minutes.setRotation(-360 * m + 90);
 		
 		super.act(delta);
 	}

@@ -13,4 +13,5 @@ public interface Processor {
 	
 	public void bind();
 	public void process(Batch batch);
+	public void resize(int width, int height);
 }

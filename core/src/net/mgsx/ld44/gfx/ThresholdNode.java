@@ -78,5 +78,13 @@ public class ThresholdNode implements Processor{
 		batch.getProjectionMatrix().set(matrix);
 	}
 
+	@Override
+	public void resize(int width, int height) {
+		if(fbo == null || fbo.getWidth() != width || fbo.getHeight() != height){
+			if(fbo != null) fbo.dispose();
+			fbo = new FrameBuffer(Format.RGBA8888, width, height, false);
+		}
+	}
+
 
 }

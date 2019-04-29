@@ -4,7 +4,6 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.ui.SelectBox;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -15,21 +14,22 @@ import net.mgsx.ld44.screens.GameScreen;
 import net.mgsx.ld44.utils.Scene;
 import net.mgsx.ld44.utils.SceneOverEvent;
 
-public class GameScene extends Group implements Scene
+public class TitleScene extends Group implements Scene
 {
 	
-	public GameScene() {
+	public TitleScene() {
 		
 		setSize(GameScreen.WORLD_WIDTH, GameScreen.WORLD_HEIGHT);
 		
 		Skin skin = GameAssets.i.skin;
 		Table root = new Table(skin);
-		root.add("Lusum Dare 44");
+		root.add("Coin Coin!").row();
+		root.add("Ludum Dare 44").row();
 		TextButton bt;
 		root.add(bt = new TextButton("Let's Jam! :-)", skin));
-		SelectBox<String> box = new SelectBox<String>(skin);
-		box.setItems("Alpha", "Beta", "Gamma", "Delta");
-		root.add(box);
+//		SelectBox<String> box = new SelectBox<String>(skin);
+//		box.setItems("Alpha", "Beta", "Gamma", "Delta");
+//		root.add(box);
 		addActor(root);
 		root.setFillParent(true);
 		

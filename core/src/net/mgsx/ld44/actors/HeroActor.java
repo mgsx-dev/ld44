@@ -1,7 +1,5 @@
 package net.mgsx.ld44.actors;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -12,6 +10,7 @@ import com.badlogic.gdx.utils.Array;
 
 import net.mgsx.ld44.assets.GameAssets;
 import net.mgsx.ld44.model.CurrencyCurve;
+import net.mgsx.ld44.utils.UniControl;
 
 public class HeroActor extends Group
 {
@@ -54,11 +53,11 @@ public class HeroActor extends Group
 	@Override
 	public void act(float delta) {
 		
-		if(jump <= 0 && Gdx.input.isKeyJustPressed(Input.Keys.A)){
+		if(jump <= 0 && UniControl.isJustPressed(UniControl.UP)){
 			jump = 1;
 			jumpVel = 12;
 		}
-		if(jump > 0 && !Gdx.input.isKeyPressed(Input.Keys.A)){
+		if(jump > 0 && !UniControl.isPressed(UniControl.UP)){
 			jumpVel -= delta * 70;
 			if(jumpVel <0){
 				// jumpVel /= 1.1f;

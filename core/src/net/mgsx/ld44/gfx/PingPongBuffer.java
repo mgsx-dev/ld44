@@ -9,8 +9,14 @@ public class PingPongBuffer {
 	private FrameBuffer back;
 
 	public void setSize(int width, int height){
-		front = new FrameBuffer(Format.RGBA8888, width, height, false);
-		back = new FrameBuffer(Format.RGBA8888, width, height, false);
+		if(front == null || front.getWidth() != width || front.getHeight() != height){
+			if(front != null) front.dispose();
+			front = new FrameBuffer(Format.RGBA8888, width, height, false);
+		}
+		if(back == null || back.getWidth() != width || back.getHeight() != height){
+			if(back != null) back.dispose();
+			back = new FrameBuffer(Format.RGBA8888, width, height, false);
+		}
 	}
 	
 	public void flip(){

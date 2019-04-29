@@ -19,7 +19,6 @@ public class BlurNode implements Processor{
 	
 	public BlurNode() {
 		pingPong.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-
 	}
 	
 	@Override
@@ -165,6 +164,11 @@ public class BlurNode implements Processor{
 			current.set(i, value);
 		}
 		return current;
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		pingPong.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 	}
 	
 

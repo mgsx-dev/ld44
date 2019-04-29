@@ -9,6 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
 /**
@@ -40,7 +41,7 @@ public class QuickGdx {
 		actor.setPosition(vb.x, vb.y);
 	}
 
-	public static void follow(Actor a, Actor b, float speed, float min) {
+	public static void follow(Actor a, Actor b, float speed, float min, int ofx, int ofy) {
 		va.set(a.getX(), a.getY());
 		vb.set(b.getX(), b.getY());
 		// ab vector
@@ -50,7 +51,7 @@ public class QuickGdx {
 		vd.set(vc).nor().scl(-min).add(vb);
 		
 		va.lerp(vd, speed);
-		a.setPosition(va.x, va.y);
+		a.setPosition(va.x + ofx, va.y + ofy, Align.center);
 	}
 
 	public static Animation<TextureRegion> animation(Texture texture, int x, int y, int tileWidth, int tileHeight, int deltaX, int deltaY, int count) {

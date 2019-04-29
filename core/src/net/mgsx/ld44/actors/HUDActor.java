@@ -24,15 +24,18 @@ public class HUDActor extends Table
 	public void act(float delta) {
 		setX(getStage().getCamera().position.x - GameScreen.WORLD_WIDTH/2);
 		setY(getStage().getCamera().position.y - GameScreen.WORLD_HEIGHT/2);
-		labelScore.getColor().a = .5f;
-		labelScore.setFontScale(labelScore.getColor().a * 4);
+		labelScore.getColor().a = 1f;
+		labelScore.setFontScale(2);
 		labelScore.setText(String.valueOf(MetaGame.i.game.score));
 		if(lastScore != MetaGame.i.game.score){
 			labelScore.clearActions();
 			labelScore.addAction(Actions.sequence(
-					Actions.color(new Color(1f, 0.7f, 0f, 1), .3f),
-					Actions.color(new Color(1f, 1f, 1f, .5f), 1f)));
+					Actions.color(new Color(1f, 1f, 1f, 1), .3f),
+					Actions.color(new Color(1f, 0.7f, 0f, 1), .3f)
+					)
+					);
 		}
+		// labelScore.setColor(1f,1f,1f,.3f);
 		lastScore = MetaGame.i.game.score;
 		super.act(delta);
 	}

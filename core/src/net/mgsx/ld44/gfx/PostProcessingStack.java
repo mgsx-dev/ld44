@@ -84,4 +84,11 @@ public class PostProcessingStack {
 			
 		}
 	}
+
+	public void resize(int width, int height) {
+		for(Processor p : pipeline){
+			p.resize(width, height);
+		}
+	}
+
 }

@@ -3,6 +3,8 @@ package net.mgsx.ld44.model;
 import com.badlogic.gdx.math.MathUtils;
 
 import net.mgsx.ld44.actors.CoinActor;
+import net.mgsx.ld44.actors.HeroActor;
+import net.mgsx.ld44.actors.PigActor;
 
 public class GameRules {
 
@@ -77,4 +79,31 @@ public class GameRules {
 	public static int scoreForCasino(CasinoResult r) {
 		return r.bonusType * 50;
 	}
+
+	public static float pigPeriod(CurrencyGame game, HeroActor hero) {
+		return MathUtils.lerp(8, 3, hero.type / 15f);
+	}
+
+	public static float cashMachinePeriod(CurrencyGame game, HeroActor hero) {
+		return 10 + hero.type;
+	}
+
+	public static void onHeroVersusPig(HeroActor hero, PigActor pig) {
+		if(hero.coins.size > 0){
+			while(hero.coins.size>0) {
+				hero.coins.removeIndex(0).remove();
+			}
+		}else{
+		}
+		if(hero.type>0){
+			hero.setType(hero.type-1);
+		}else{
+			MetaGame.i.game.over = true;
+		}
+	}
+
+	public static float newTempoBonusSpeed() {
+		return (1 << MathUtils.random(0, 3)) / 2f; // 1 bar or 2 bars
+	}
+
 }

@@ -44,7 +44,11 @@ public class CoinActor extends Group
 		if(head != null){
 			((TextureRegionDrawable)body.getDrawable()).setRegion(idleAnim.getKeyFrame(0, true));
 
-			QuickGdx.follow(this, head, .5f, 48f); // radius + half radius
+			if(head instanceof CoinActor){
+				QuickGdx.follow(this, head, .5f, 48f, 0, 0); // radius + half radius
+			}else{
+				QuickGdx.follow(this, head, .5f, 48f, 0, 5);
+			}
 			body.setScale(1f);
 		}else{
 			//time += delta * 360f;

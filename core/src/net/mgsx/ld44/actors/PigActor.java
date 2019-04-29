@@ -13,11 +13,18 @@ public class PigActor extends Group
 {
 	private Image body;
 	public int radius;
+	public boolean alive = true;
+	private int level;
+	private int type;
 
-	public PigActor() {
+	public PigActor(int type, int level) {
+		this.type = type;
+		this.level = level;
 		body = QuickGdx.image(GameAssets.i.hero, 4 * 64, 0, 64, 64);
 		addActor(body);
 		body.setPosition(0, 0, Align.center);
+		body.setScale(2);
+		body.setOrigin(Align.center);
 	}
 	
 	@Override
@@ -27,9 +34,12 @@ public class PigActor extends Group
 		super.act(delta);
 //		body.setY((MathUtils.sin(GameAudio.i.timeToRad() / .5f)*.5f+.5f) * 64 * 2 + 32);
 //		body.setScale((MathUtils.sin(GameAudio.i.timeToRad() / 1f)*.5f+.5f) * .5f + 1);
-		body.setY((MathUtils.sin(GameAudio.i.timeToRad() / 4f)) * 64 * 4 + 0);
-		body.setScale(2);
-		body.setOrigin(Align.center);
+		if(level <= 0){
+			
+		}else{
+			body.setY((MathUtils.sin(GameAudio.i.timeToRad() / 4f)) * 64 * 4 + 0);
+		}
+		
 	}
 
 	public float centerX() {

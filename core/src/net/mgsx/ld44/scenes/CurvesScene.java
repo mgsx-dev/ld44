@@ -1,7 +1,6 @@
 package net.mgsx.ld44.scenes;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -21,6 +20,7 @@ import net.mgsx.ld44.actors.CashMachineActor;
 import net.mgsx.ld44.actors.ClockActor;
 import net.mgsx.ld44.actors.CoinActor;
 import net.mgsx.ld44.actors.CurveActor;
+import net.mgsx.ld44.actors.GameOverActor;
 import net.mgsx.ld44.actors.GridActor;
 import net.mgsx.ld44.actors.HUDActor;
 import net.mgsx.ld44.actors.HeroActor;
@@ -33,12 +33,13 @@ import net.mgsx.ld44.model.GameRules;
 import net.mgsx.ld44.model.MetaGame;
 import net.mgsx.ld44.screens.GameScreen;
 import net.mgsx.ld44.utils.Scene;
+import net.mgsx.ld44.utils.UniControl;
 
 public class CurvesScene extends Group implements Scene{
 
 	private ShapeRenderer shapeRenderer;
 	public final Vector2 worldCenter = new Vector2(0,0);
-	private float stepSize = 400;
+	private float stepSize = 500;
 	public HeroActor hero;
 	private static final Vector2 point = new Vector2();
 	private float t;
@@ -51,16 +52,27 @@ public class CurvesScene extends Group implements Scene{
 	private final static Array<CoinActor> nextCoins = new Array<CoinActor>();
 	private final static Array<CoinActor> toRemoveCoins = new Array<CoinActor>();
 	
-	private static final float LOCK_FOR_FUSION = 2;
+	private static final float LOCK_FOR_FUSION = 0;
 	private static final float LOCK_FOR_HERO_TRANSFORM = 8;
 	
 	private static final int MAX_QUEUE = 5;
+	private static final float TIME_RATE_FALLDOWN = 1f;
+	private static final float PIG_COLLISION_BAR = 0;
+	private static final float CHANGE_MIDI_NOMIDI_PERIOD = 4; // every 10 seconds
+	
+	private float noMidiSpeed;
 	
 	private float lockBar = 0;
 	private ClockActor clockActor;
 	private HUDActor hud;
 	private Label label;
 	private GameScreen gameScreen;
+	
+	private float curveAmplitude = 1f;
+	private float curveFrequency = .1f;
+	
+	private float cachMachineTime = 0;
+	private float pigTime = 0;
 	
 	// TODO plae and check bonus and other entities ...
 	
@@ -99,17 +111,27 @@ public class CurvesScene extends Group implements Scene{
 	
 	// TODO when gen points : f (time) + last points position
 	private void genPoint() {
+		
 		for(CurrencyCurve c : MetaGame.i.game.curves){
 			
-			float freq = .1f;
-			c.add(point.set(worldCenter.x,
-					Math.max(-10, 
-							((.5f + .5f * MathUtils.sinDeg(worldCenter.x * freq + (1 + c.index) * 60f)) * 500 + 
-							(MathUtils.random() - .6f) * 1300 +
-							c.index * 100) * 1 + 100
-					)));
+			float freq = curveFrequency; 
+			float amplitude = curveAmplitude; 
 			
-			// genBonus();
+			float height = Math.max(-10, 
+					((.5f + .5f * MathUtils.sinDeg(worldCenter.x * freq + (1 + c.index) * 60f)) * 500 + 
+					(MathUtils.random() - .6f) * 1300 +
+					c.index * 100) * 1 + 100
+			);
+			
+			height = height * amplitude;
+			
+			float timeRate =  MetaGame.i.game.time / MetaGame.i.game.totalTime;
+			if(timeRate > TIME_RATE_FALLDOWN)
+			{
+				height = -1200;
+			}
+			
+			c.add(point.set(worldCenter.x, height));
 		}
 	}
 	
@@ -135,14 +157,42 @@ public class CurvesScene extends Group implements Scene{
 		gameScreen.postProcessing.emissive2Color.a = 1f;
 	}
 	
+	private Actor gameOverActor = null;
+	public boolean midiMode;
+	private int noMidiBonusType;
+	
 	@Override
 	public void act(float delta) {
 		
-		float targetAlpha = hero.type >= 15 ? 1f : hero.type==0 ? .6f : ( hero.type%2==1 ? 1 : .3f);
-		gameScreen.postProcessing.emissiveColor.a = MathUtils.lerp(gameScreen.postProcessing.emissiveColor.a, Math.min(1f, targetAlpha), delta * 1.2f);
+		hud.toFront();
 		
-		// emi 2
-		gameScreen.postProcessing.emissive2Color.a = MathUtils.lerp(gameScreen.postProcessing.emissive2Color.a, 0, delta * 3f);
+		MetaGame.i.game.update(delta);
+		
+		if(hero.getY(Align.center) < -600){
+			MetaGame.i.game.over = true;
+			MetaGame.i.game.fallOut = true;
+		}
+		
+		if(MetaGame.i.game.over && gameOverActor == null){
+			MetaGame.i.game.over = true;
+			lock(-1);
+			MetaGame.i.game.lockTime = true;
+			
+			hud.addActor(gameOverActor = new GameOverActor());
+			
+		}
+		if(MetaGame.i.game.over){
+			gameScreen.postProcessing.emissiveColor.a = MathUtils.lerp(gameScreen.postProcessing.emissiveColor.a, .5f, delta * 1.2f);
+			gameScreen.postProcessing.emissive2Color.a = MathUtils.lerp(gameScreen.postProcessing.emissive2Color.a, 0, delta * 3f);
+		}else{
+			
+			float targetAlpha = hero.type >= 15 ? 1f : hero.type==0 ? .6f : ( hero.type%2==1 ? 1 : .3f);
+			gameScreen.postProcessing.emissiveColor.a = MathUtils.lerp(gameScreen.postProcessing.emissiveColor.a, Math.min(1f, targetAlpha), delta * 1.2f);
+			
+			// emi 2
+			gameScreen.postProcessing.emissive2Color.a = MathUtils.lerp(gameScreen.postProcessing.emissive2Color.a, 0, delta * 3f);
+		}
+		
 
 		float moveDelta = delta;
 		if(lockBar > 0){
@@ -171,15 +221,48 @@ public class CurvesScene extends Group implements Scene{
 		Camera cam = getStage().getCamera();
 		
 		// TODO split in different method r class
-		if(lockBar <= 0){
+		if(lockBar == 0){
 			
-			if(GameAudio.i.lastEvents.size > 0){
-				spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+			cachMachineTime += delta;
+			pigTime += delta;
+			
+			// change every 10s
+			boolean newMode = MathUtils.sin(GameAudio.i.getMusicTime() * MathUtils.PI / CHANGE_MIDI_NOMIDI_PERIOD) > 0;
+			if(newMode && !midiMode){
+				noMidiSpeed = GameRules.newTempoBonusSpeed();
+				noMidiBonusType = GameRules.randomCoinTypeFor(hero.type);
+			}
+			midiMode = newMode;
+			
+			
+			if(!midiMode && GameAudio.i.isJustBar(noMidiSpeed, 0)){
+//				if(cachMachineTime > 3){
+//					cachMachineTime = 0;
+//					spawnMachine(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+//				}else if(pigTime > 2){
+//					pigTime = 0;
+//					spawnPig(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+//				}else{
+//					spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+//				}
+				
+				spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), noMidiBonusType);
+			}
+					
+					
+			if(midiMode && GameAudio.i.lastEvents.size > 0){
+				// choose between pig, cash or bonus :
+				if(cachMachineTime > GameRules.cashMachinePeriod(MetaGame.i.game, hero)){
+					cachMachineTime = 0;
+					spawnMachine(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+				}else if(pigTime > GameRules.pigPeriod(MetaGame.i.game, hero)){
+					pigTime = 0;
+					spawnPig(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+				}else{
+					spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(1f)), null);
+				}
 			}
 			
-			if(GameAudio.i.isJustBar(1, 0)){
-				// XXX spawnBonus(heroCurveTime + getCurveTime(GameAudio.i.getBarDuration(0f)));
-			}
 			
 			for(CurrencyCurve c : MetaGame.i.game.curves){
 				c.update();
@@ -245,21 +328,30 @@ public class CurvesScene extends Group implements Scene{
 				updateHeroTail(this, hero);
 				// XXX addScore(GameRules.scoreForUnqueue(coin));
 			}
-			if(Gdx.input.isKeyJustPressed(Input.Keys.Z)){
-				if(hero.coins.size > 0){
-					hero.coins.removeIndex(0).remove();
-					updateHeroTail(this, hero);
-				}
-			}
-			if(Gdx.input.isKeyJustPressed(Input.Keys.E)){
+			
+			// player controls
+//			if(UniControl.isJustPressed(UniControl.LEFT)){
+//				if(hero.coins.size > 0){
+//					hero.coins.removeIndex(0).remove();
+//					updateHeroTail(this, hero);
+//				}
+//			}
+			
+			if(UniControl.isJustPressed(UniControl.RIGHT)){
 				if(hero.coins.size > 0){
 					hero.coins.add(hero.coins.removeIndex(0));
 					updateHeroTail(this, hero);
 				}
 			}
+			else if(UniControl.isJustPressed(UniControl.LEFT)){
+				if(hero.coins.size > 0){
+					hero.coins.insert(0, hero.coins.pop());
+					updateHeroTail(this, hero);
+				}
+			}
 			
 			
-			if(Gdx.input.isKeyJustPressed(Input.Keys.S) && hero.jump<=0){
+			if(UniControl.isJustPressed(UniControl.DOWN) && hero.jump<=0){
 				// FIXME a little buggy ... fall at down level
 				hero.setY(hero.baseY = hero.baseY - 50);
 				hero.jumpVel = -4;
@@ -279,6 +371,8 @@ public class CurvesScene extends Group implements Scene{
 				hero.setY(hero.baseY = hero.baseY - 50);
 			}
 			
+			// TODO !!!
+			/*
 			if(Gdx.input.isKeyJustPressed(Input.Keys.G)){
 				PigActor pig = new PigActor();
 				addActor(pig);
@@ -293,81 +387,94 @@ public class CurvesScene extends Group implements Scene{
 				mob.setPosition(point.x, point.y);
 				entities.add(mob);
 			}
+			*/
 		}
 		
 		
-		
-		for(Actor e : entities){
-			if(e.getX() < getStage().getCamera().position.x - getStage().getWidth()){
-				e.remove();
-			}
-			
-			float hx = hero.getX();
-			float hy = hero.getY();
-			float ex = e.getX();
-			float ey = e.getY();
-			if(e instanceof CoinActor){
-				if(point.set(ex - hx, ey - hy).len() < 64f - 20){ // tODO radius
+		if(lockBar == 0){
+			for(Actor e : entities){
+				if(e.getX() < getStage().getCamera().position.x - getStage().getWidth()){
+					e.remove();
+				}
+				
+				float hx = hero.getX();
+				float hy = hero.getY();
+				float ex = e.getX();
+				float ey = e.getY();
+				if(e instanceof CoinActor){
 					CoinActor coin = (CoinActor) e;
 					if(coin.head == null){
-						hero.addCoin(coin);
-						updateHeroTail(this, hero);
-						
-						GameAudio.i.playGrabCoinSync(coin.type, .5f);
-						coin.addAction(Actions.sequence(
-								Actions.scaleTo(2, 2, .1f, Interpolation.sine),
-								Actions.scaleTo(1, 1, .5f, Interpolation.elasticOut)
-								));
-						addScore(GameRules.scoreForEnqueue(coin));
-					}
-				}
-				// e.remove();
-			}else if(e instanceof PigActor){
-				PigActor pig = (PigActor)e;
-				if(point.set(pig.centerX() - hx, pig.centerY() - hy).len() < pig.radius + 32){ // tODO radius
-					e.setOrigin(Align.center);
-					e.addAction(Actions.sequence(
-							Actions.parallel(
-									Actions.scaleBy(2, 2, .3f),
-									Actions.moveBy(10, 100, 1f, Interpolation.pow3InInverse)
-									),
-							Actions.removeActor()
-							));
-					
-					if(hero.coins.size > 0){
-						while(hero.coins.size>0) {
-							hero.coins.removeIndex(0).remove();
-						}
-					}else{
-						if(hero.type>0){
-							hero.setType(hero.type-1);
-						}else{
-							// TODO die !
+						if(point.set(ex - hx, ey - hy).len() < 64f - 20){ // tODO radius
+							hero.addCoin(coin);
+							updateHeroTail(this, hero);
+							
+							GameAudio.i.playGrabCoinSync(coin.type, .5f);
+							coin.addAction(Actions.sequence(
+									Actions.scaleTo(2, 2, .1f, Interpolation.sine),
+									Actions.scaleTo(1, 1, .5f, Interpolation.elasticOut)
+									));
+							addScore(GameRules.scoreForEnqueue(coin));
 						}
 					}
-					lock(4);
-					updateHeroTail(this, hero);
-				}
-			}else if(e instanceof CashMachineActor){
-				CashMachineActor mob = (CashMachineActor)e;
-				if(point.set(mob.centerX() - hx, mob.centerY() - hy).len() < mob.radius + 32){ // tODO radius
-					
-					
-					
-					// lock all 
-					lock(-1); // TODO infinite
-					
-					mob.playCasino(this, hero, Actions.run(new Runnable() {
-						@Override
-						public void run() {
-							lockBar = 1;
+					// e.remove();
+				}else if(e instanceof PigActor){
+					PigActor pig = (PigActor)e;
+					if(pig.alive){
+						if(point.set(pig.centerX() - hx, pig.centerY() - hy).len() < pig.radius + 32){ // tODO radius
+							pig.alive = false;
+							e.setOrigin(Align.center);
+							e.addAction(Actions.sequence(
+									Actions.parallel(
+											Actions.scaleBy(2, 2, .3f),
+											Actions.moveBy(10, -500, 1f, Interpolation.pow3InInverse)
+											),
+									Actions.removeActor()
+									));
+							
+							GameRules.onHeroVersusPig(hero, pig);
+							lock(PIG_COLLISION_BAR);
+							updateHeroTail(this, hero);
+							
+							hero.setOrigin(Align.center);
+							hero.addAction(
+									Actions.sequence(
+											Actions.scaleTo(2, 2, .3f, Interpolation.pow2), 
+											Actions.scaleTo(1, 1, 1f, Interpolation.elasticOut)));
 						}
-					}));
-					updateHeroTail(this, hero);
+					}
+				}else if(e instanceof CashMachineActor){
+					CashMachineActor mob = (CashMachineActor)e;
+					if(mob.alive){
+						if(point.set(mob.centerX() - hx, mob.centerY() - hy).len() < mob.radius + 32){ // tODO radius
+							
+							mob.alive = false;
+							
+							// lock all 
+							lock(-1); // TODO infinite
+							
+							mob.playCasino(this, hero, Actions.run(new Runnable() {
+								@Override
+								public void run() {
+									lockBar = 1;
+								}
+							}));
+							updateHeroTail(this, hero);
+							mob.toFront();
+							hero.toFront();
+							
+							hero.setOrigin(Align.center);
+							hero.addAction(
+									Actions.sequence(
+											Actions.scaleTo(4, 4, 1f), 
+											Actions.delay(3f),
+											Actions.scaleTo(1, 1, 1f, Interpolation.elasticOut)));
+							
+						}
+					}
 				}
 			}
+			for(int i=0 ; i<entities.size ; ) if(entities.get(i).getParent() == null) entities.removeIndex(i); else i++;
 		}
-		for(int i=0 ; i<entities.size ; ) if(entities.get(i).getParent() == null) entities.removeIndex(i); else i++;
 		
 		super.act(delta);
 	}
@@ -426,6 +533,49 @@ public class CurvesScene extends Group implements Scene{
 		
 		entities.add(coinActor);
 	}
+	public void spawnPig(float curveTime, Integer type) {
+		
+		hero.curve.getPosition(point, curveTime);
+		
+		// TODO type and level
+		PigActor a = new PigActor(0, 0); 
+		
+		
+		// spawn actor with rythm
+		a.getColor().a = 0f;
+		addActor(a);
+		
+		a.addAction(Actions.sequence(syncAction(1f), Actions.parallel(
+				Actions.scaleTo(1, 1, .2f, Interpolation.pow3InInverse),
+				Actions.alpha(1, .05f, Interpolation.linear))));
+		
+		a.setPosition(point.x, point.y + 1 * 32f);
+		
+		
+		
+		entities.add(a);
+	}
+	public void spawnMachine(float curveTime, Integer type) {
+		
+		hero.curve.getPosition(point, curveTime);
+		
+		CashMachineActor a = new CashMachineActor(); 
+		
+		// spawn actor with rythm
+		a.getColor().a = 0f;
+		addActor(a);
+		
+		a.addAction(Actions.sequence(syncAction(1f), Actions.parallel(
+				Actions.scaleTo(1, 1, .2f, Interpolation.pow3InInverse),
+				Actions.alpha(1, .05f, Interpolation.linear))));
+		
+		a.setPosition(point.x, point.y + 1 * 32f);
+		
+		
+		
+		entities.add(a);
+	}
+	
 
 	private Action syncAction(float barPrecision) {
 		return Actions.delay(GameAudio.i.getNextBarTimeRemain(barPrecision));
@@ -446,6 +596,7 @@ public class CurvesScene extends Group implements Scene{
 		boolean enabled = true;
 		if(!enabled) return;
 		
+		boolean hasChanged = false;
 		
 		
 		// TODO why other transform leave hero head ????? maybe tail : hero tail ??? :grim:
@@ -483,6 +634,8 @@ public class CurvesScene extends Group implements Scene{
 						
 						lock(LOCK_FOR_FUSION);
 						
+						hasChanged = true;
+						
 						// nextCoins.add(newCoin);
 						while(toRemoveCoins.size > 0){
 							toRemoveCoins.pop().remove();
@@ -510,7 +663,13 @@ public class CurvesScene extends Group implements Scene{
 			
 			hero.setType(GameRules.coinTransformType(ctype));
 			
+			hero.addAction(Actions.sequence(
+					Actions.scaleTo(3, 3, .5f),
+					Actions.scaleTo(1, 1, 1f, Interpolation.elasticOut)));
+			
 			lock(LOCK_FOR_HERO_TRANSFORM);
+			
+			hasChanged = true;
 		}
 		
 		
@@ -532,12 +691,17 @@ public class CurvesScene extends Group implements Scene{
 		
 		hero.tail = hero.coins.size > 0 ? hero.coins.first() : hero;
 		
+		if(hasChanged){
+			updateHeroTail(container, hero);
+		}
 	}
 
 	@Override
 	public void begin() {
 		// TODO Auto-generated method stub
-		
+		gameScreen.postProcessing.enabled = true;
+		gameScreen.postProcessing.emissiveColor.set(1, 1, 1, 0);
+		gameScreen.postProcessing.emissive2Color.set(1, 1, 1, 0);
 	}
 
 	@Override
@@ -548,8 +712,14 @@ public class CurvesScene extends Group implements Scene{
 
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
-		
+		((OrthographicCamera)getStage().getCamera()).zoom = 1;
+		getStage().getViewport().update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
+		remove();
+		gameScreen.postProcessing.enabled = false;
+//		addAction(Actions.sequence(
+//				Actions.moveBy(1000, 0, 1f),
+//				Actions.removeActor()
+//				));
 	}
 
 	@Override

@@ -7,4 +7,12 @@ public class CurrencyGame {
 	public int score;
 	public float time;
 	public float totalTime = GameRules.levelDuration;
+	public boolean lockTime = false;
+	public boolean over = false;
+	public boolean fallOut = false;
+	public void update(float delta) {
+		if(!lockTime){
+			time += delta;
+		}
+	}
 }
