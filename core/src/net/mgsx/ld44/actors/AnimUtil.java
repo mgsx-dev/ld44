@@ -1,4 +1,4 @@
-package net.mgsx.ld44.scenes;
+package net.mgsx.ld44.actors;
 
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;

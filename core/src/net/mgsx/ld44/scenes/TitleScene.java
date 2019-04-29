@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
+import net.mgsx.ld44.actors.AnimUtil;
 import net.mgsx.ld44.assets.GameAssets;
 import net.mgsx.ld44.screens.GameScreen;
 import net.mgsx.ld44.utils.Scene;

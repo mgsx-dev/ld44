@@ -362,22 +362,29 @@ public class CurvesScene extends Group implements Scene{
 			
 			if(UniControl.isJustPressed(UniControl.DOWN) && hero.jump<=0){
 				// FIXME a little buggy ... fall at down level
-				hero.setY(hero.baseY = hero.baseY - 50);
-				hero.jumpVel = -4;
+				
+				// find curve just below current
+				
+				hero.setY(hero.baseY = hero.baseY);
+				hero.jumpVel = -2;
 				hero.jump = 1;
+				float hMax = hero.curve.getPosition(point, t2).y;
+				
+				boolean found = false;
 				for(CurrencyCurve c2 : MetaGame.i.game.curves){
 					if(c2 == hero.curve) continue;
 					c2.getPosition(point, t2);
-					if(true){
-						if(point.y < hero.baseY + hero.jumpHeight && point.y > curY){
+					if(point.y < hMax){
+						if(!found || point.y > hero.baseY){
 							hero.curve = c2;
-							hero.jumpHeight += -point.y + hero.baseY;
+							hero.jumpHeight = 0; // += -point.y + hero.baseY - 32;
 							hero.baseY = point.y;
-							curY = point.y;
+							found = true;
 						}
 					}
 				}
-				hero.setY(hero.baseY = hero.baseY - 50);
+				hero.jumpHeight = hMax - hero.baseY - 1;
+				hero.setY(hero.baseY);
 			}
 			
 			// TODO !!!

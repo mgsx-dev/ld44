@@ -11,7 +11,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import net.mgsx.ld44.assets.GameAssets;
 import net.mgsx.ld44.events.BackMenuEvent;
 import net.mgsx.ld44.model.MetaGame;
-import net.mgsx.ld44.scenes.AnimUtil;
 
 public class GameOverActor extends Table
 {
