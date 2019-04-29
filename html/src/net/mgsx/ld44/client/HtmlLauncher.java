@@ -13,7 +13,7 @@ public class HtmlLauncher extends GwtApplication {
 
 	@Override
 	public GwtApplicationConfiguration getConfig () {
-		return new GwtApplicationConfiguration(LD44.SCREEN_WIDTH, LD44.SCREEN_HEIGHT);
+		return new GwtApplicationConfiguration(945, 450);
 	}
 	
     @Override
