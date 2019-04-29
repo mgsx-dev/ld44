@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
@@ -19,16 +18,20 @@ public class ClockActor extends Group
 	private Image center;
 	private Image hours;
 	private Image minutes;
+	private Color genColor = new Color();
 
 	private Array<Image> dots = new Array<Image>();
-	private Label label;
+	//private Label label;
 	
 	public ClockActor() {
 		back = QuickGdx.image(GameAssets.i.hero, 10 * 64, 0 * 64, 6 * 64, 6 * 64);
 		center = QuickGdx.image(GameAssets.i.hero, 10 * 64, 6 * 64, 1 * 64, 1 * 64);
 		minutes = QuickGdx.image(GameAssets.i.hero, 11 * 64, 6 * 64, 5 * 64, 1 * 64);
 		hours = QuickGdx.image(GameAssets.i.hero, 12 * 64, 7 * 64, 4 * 64, 1 * 64);
-		label = new Label("00:00", GameAssets.i.skin);
+		//label = new Label("00:00", GameAssets.i.skin);
+		
+		genColor.set(0,1,1,1);
+		
 		int N = 12;
 		for(int i=0 ; i<N ; i++){
 			Image dot = QuickGdx.image(GameAssets.i.hero, 10 * 64, 6 * 64, 1 * 64, 1 * 64);
@@ -39,14 +42,15 @@ public class ClockActor extends Group
 			dots.add(dot);
 			// dot.setColor(Color.GRAY);
 			dot.getColor().a = .3f;
+			dot.setColor(genColor);
 		}
 		
 		addActor(back);
 		addActor(hours);
 		addActor(minutes);
 		addActor(center);
-		addActor(label);
-		label.setPosition(0, 0, Align.center);
+//		addActor(label);
+//		label.setPosition(0, 0, Align.center);
 	}
 	
 	@Override
@@ -57,22 +61,22 @@ public class ClockActor extends Group
 		int h1 = (value/100)/60;
 		int m1 = (value/100)%60;
 		int s1 = value%100;
-		label.setText(String.valueOf(h1 + ":" + m1 + ":" + s1));
+//		label.setText(String.valueOf(h1 + ":" + m1 + ":" + s1));
 		
 		getColor().a = 1f;
 		
-		back.setColor(Color.GRAY);
-		back.getColor().a = 0f;
-		hours.getColor().a = 1f;
-		minutes.getColor().a = 1f;
-		center.getColor().a = 1f;
-		label.getColor().a = .5f;
+		
+		back.getColor().a = 0;
+		hours.setColor(genColor);
+		minutes.setColor(genColor);
+		center.setColor(genColor);
+		//label.getColor().a = .5f;
 		setScale(2);
 		
-		label.setPosition(0, 250, Align.center);
+		//label.setPosition(0, 250, Align.center);
 		
 		setScale(1f);
-		setPosition(getStage().getCamera().position.x + 600, getStage().getCamera().position.y);
+		setPosition(getStage().getCamera().position.x + 600, getStage().getCamera().position.y + 200);
 		
 		hours.setOrigin(32, 32);
 		minutes.setOrigin(32, 32);

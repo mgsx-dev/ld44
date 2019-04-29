@@ -317,9 +317,7 @@ public class CurvesScene extends Group implements Scene{
 			cam.position.x = hero.getX(Align.center) + GameScreen.WORLD_WIDTH/4;
 			cam.position.y = Math.max(GameScreen.WORLD_HEIGHT/2, MathUtils.lerp(cam.position.y, hero.getY(Align.center), .1f));
 			
-			// XXX cam zoom debug
-			float t = hero.type / 15f;
-			float expectedoom = MathUtils.lerp(2f, 1.5f, t*t*t );
+			float expectedoom = GameRules.getZoom(hero);
 			((OrthographicCamera)cam).zoom = MathUtils.lerp(((OrthographicCamera)cam).zoom, expectedoom, delta * .5f);
 			
 			while(hero.coins.size > MAX_QUEUE){

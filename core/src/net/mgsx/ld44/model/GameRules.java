@@ -130,4 +130,10 @@ public class GameRules {
 		return MathUtils.lerp(.1f, .1f, hero.type/15f) ;
 	}
 
+	public static float getZoom(HeroActor hero) {
+		float t = hero.type / 15f;
+		float expectedoom = MathUtils.lerp(2f, 1.5f, t*t*t );
+		return expectedoom; // expectedoom;
+	}
+
 }
