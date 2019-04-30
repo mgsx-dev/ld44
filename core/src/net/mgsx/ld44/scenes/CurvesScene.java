@@ -307,6 +307,8 @@ public class CurvesScene extends Group implements Scene{
 					}
 				}
 				
+				hero.setY(hero.baseY + hero.jumpHeight);
+				
 			}else{
 				hero.jumpVel = 0;
 				hero.jumpHeight = 0;
@@ -382,7 +384,7 @@ public class CurvesScene extends Group implements Scene{
 					}
 				}
 				hero.jumpHeight = hMax - hero.baseY - 1;
-				hero.setY(hero.baseY);
+				hero.setY(hero.baseY + hero.jumpHeight);
 			}
 			
 			// TODO !!!
