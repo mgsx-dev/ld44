@@ -24,6 +24,8 @@ public class GameAudio {
 	private Music currentMusic;
 	private float lastPosition;
 	private float currentPosition;
+	private float rawPosition;
+	private float lastRawPosition;
 	private float bpm;
 	
 	public final Array<MidiEvent> lastEvents = new Array<MidiEvent>();
@@ -55,9 +57,16 @@ public class GameAudio {
 		sounds.update(deltaTime);
 		
 		if(currentMusic != null){
-			lastPosition = currentPosition;
-			currentPosition = currentMusic.getPosition(); 
+			lastRawPosition = rawPosition;
+			rawPosition = currentMusic.getPosition(); 
 		}
+		lastPosition = currentPosition;
+		currentPosition += deltaTime;
+		if(Math.abs(currentPosition - rawPosition) > .2f){
+			currentPosition = rawPosition;
+			lastPosition = lastRawPosition;
+		}
+		
 		for(int i=0 ; i<scheduledSfx.size ; ){
 			SfxPlay sfx = scheduledSfx.get(i);
 			if(isJustBar(sfx.barPrecision,  - 0.41f)){ // TODO -45 phase game dependents (jump, etc)
@@ -74,18 +83,18 @@ public class GameAudio {
 		if(midiSequence != null){
 			float rate = 1f / midiSequence.scale;
 			for(MidiTrack track : midiSequence.tracks){
-				if(lastPosition > currentPosition){
+				if(currentPosition < lastPosition){
 					track.lastIndex = 0;
 				}
 				for(int i=track.lastIndex ; i<track.events.size ; i++){
 					MidiEvent e = track.events.get(i);
 					track.lastIndex = i;
-					if(e.status == 144){ // note on
-						if(e.time*rate < currentPosition * (bpm/60f)){
+					if(e.time*rate < currentPosition * (bpm/60f)){
+						if(e.status == 144){ // note on
 							lastEvents.add(e);
-						}else{
-							break;
 						}
+					}else{
+						break;
 					}
 				}
 			}
