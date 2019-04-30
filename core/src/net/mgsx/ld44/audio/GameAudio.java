@@ -72,20 +72,19 @@ public class GameAudio {
 		// update midiSequence events
 		lastEvents.clear();
 		if(midiSequence != null){
+			float rate = 1f / midiSequence.scale;
 			for(MidiTrack track : midiSequence.tracks){
-				for(MidiEvent e : track.events){
+				if(lastPosition > currentPosition){
+					track.lastIndex = 0;
+				}
+				for(int i=track.lastIndex ; i<track.events.size ; i++){
+					MidiEvent e = track.events.get(i);
+					track.lastIndex = i;
 					if(e.status == 144){ // note on
-						float rate = 1f / (midiSequence.scale * 1);
-						// beats * 4
-						
-						float delay = 0f;
-						float basePosition = currentPosition - getBarDuration(delay);
-						float lastBasePosition = lastPosition - getBarDuration(delay);
-						if(e.time*rate < basePosition * (bpm/60f) && e.time * rate >= lastBasePosition * (bpm/60f)){
-//							System.out.println(e.time);
-//							System.out.println(currentPosition);
+						if(e.time*rate < currentPosition * (bpm/60f)){
 							lastEvents.add(e);
-							// GameAudio.i.playGrabCoin(0);
+						}else{
+							break;
 						}
 					}
 				}
